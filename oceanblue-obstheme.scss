@@ -1,0 +1,24 @@
+OBSTheme {
+	base: rgb(255, 0, 255);
+	alternateBase: rgb(255, 0, 255);
+
+	window: rgb(255, 0, 255);
+	windowText: rgb(255, 0, 255);
+
+	button: rgb(255, 0, 255);
+	buttonText: rgb(255, 0, 255);
+
+	highlight: rgb(255, 0, 255);
+	highlightText: rgb(255, 0, 255);
+
+	text: hsla($tertiary-hue, $tertiary-sat, $tertiary-lum * 0.95, 1.0);
+	brightText: hsl($tertiary-hue, $tertiary-sat, $tertiary-lum);
+
+	link: rgb(255, 0, 255);
+	linkVisited: rgb(255, 0, 255);
+
+	light: rgb(255, 0, 255);
+	mid: rgb(255, 0, 255);
+	dark: rgb(255, 0, 255);
+	shadow: rgb(255, 0, 255);
+}

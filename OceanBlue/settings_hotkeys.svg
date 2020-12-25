@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg2055"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="settings_hotkeys.svg">
+  <defs
+     id="defs2049" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="22.285888"
+     inkscape:cy="11.682875"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1267"
+     inkscape:window-height="1198"
+     inkscape:window-x="4156"
+     inkscape:window-y="143"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1424"
+       empspacing="8" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2052">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1438"
+       width="30"
+       height="30"
+       x="1"
+       y="1"
+       rx="2" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440"
+       width="5"
+       height="5"
+       x="3"
+       y="23"
+       rx="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1"
+       x="15.891927"
+       y="5.9898472"
+       id="text1519"><tspan
+         sodipodi:role="line"
+         id="tspan1517"
+         x="15.891926"
+         y="5.9898472"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.33333px;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';text-align:center;text-anchor:middle">HOTKEY</tspan></text>
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-8"
+       width="5"
+       height="5"
+       x="10"
+       y="23"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-9"
+       width="5"
+       height="5"
+       x="24"
+       y="23"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-6"
+       width="5"
+       height="5"
+       x="17"
+       y="23"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-64"
+       width="5"
+       height="5"
+       x="3"
+       y="16"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-8-5"
+       width="5"
+       height="5"
+       x="10"
+       y="16"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-9-8"
+       width="5"
+       height="5"
+       x="24"
+       y="16"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-6-5"
+       width="5"
+       height="5"
+       x="17"
+       y="16"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-93"
+       width="5"
+       height="5"
+       x="3"
+       y="9"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-8-4"
+       width="5"
+       height="5"
+       x="10"
+       y="9"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-9-0"
+       width="5"
+       height="5"
+       x="24"
+       y="9"
+       rx="1" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1440-6-2"
+       width="5"
+       height="5"
+       x="17"
+       y="9"
+       rx="1" />
+  </g>
+</svg>

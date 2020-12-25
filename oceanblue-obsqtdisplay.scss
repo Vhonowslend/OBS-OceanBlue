@@ -1,0 +1,10 @@
+OBSQTDisplay {
+	/* Sources look weird if the background isn't black. */
+	qproperty-displayBackgroundColor: hsl(0, 0%, 0%);
+}
+
+#OBSBasic OBSQTDisplay {
+	/* But we don't want that to affect anything else. */
+	qproperty-displayBackgroundColor: hsl(210, 100%, 5%);
+}
+
