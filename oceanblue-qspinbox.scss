@@ -1,0 +1,104 @@
+// Also contains QDoubleSpinBox (same element, just with float)
+
+$qtspinbox-button-size: ($control-size / 2) - ($control-border + $control-padding) * 2;	
+
+QSpinBox,
+QDoubleSpinBox {	
+	height: $control-inner-size;
+	padding: $control-padding $text-padding;
+	margin-right: $control-size;
+	border: $control-border solid $control-bg;
+	background-color: $control-bg;
+	color: $control-fg;
+}
+
+QSpinBox:focus,
+QDoubleSpinBox:focus {
+	border-color: $control-bg-active;
+	border-style: inset;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QSpinBox:hover,
+QDoubleSpinBox:hover {
+	border-color: $control-bg-focus;
+	background-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QSpinBox:disabled,
+QDoubleSpinBox:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}
+
+QSpinBox::up-button,
+QSpinBox::down-button,
+QDoubleSpinBox::up-button,
+QDoubleSpinBox::down-button {
+	width: $control-inner-size;
+	height: $qtspinbox-button-size;
+	padding: $control-padding;
+	border: $control-border solid $control-bg;
+	background-color: $control-bg;
+	color: $control-fg;
+	right: -($control-size + $control-border);
+}
+
+QSpinBox::up-button:hover,
+QSpinBox::down-button:hover,
+QDoubleSpinBox::up-button:hover,
+QDoubleSpinBox::down-button:hover {
+	border-color: $control-bg-focus;
+	background-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QSpinBox::up-button:pressed,
+QSpinBox::down-button:pressed,
+QDoubleSpinBox::up-button:pressed,
+QDoubleSpinBox::down-button:pressed {
+	border-color: $control-bg-active;
+	border-style: inset;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QSpinBox::up-button:disabled,
+QSpinBox::down-button:disabled,
+QDoubleSpinBox::up-button:disabled,
+QDoubleSpinBox::down-button:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}
+
+QSpinBox::up-button,
+QDoubleSpinBox::up-button {
+	top: -($control-border);
+}
+
+QSpinBox::down-button,
+QDoubleSpinBox::down-button {
+	bottom: -($control-border);
+}
+
+QSpinBox::up-arrow,
+QDoubleSpinBox::up-arrow,
+QSpinBox::down-arrow,
+QDoubleSpinBox::down-arrow {
+	width: $qtspinbox-button-size;
+	height: $qtspinbox-button-size;
+}
+
+QSpinBox::up-arrow,
+QDoubleSpinBox::up-arrow {		
+	image: $image-arrow-up;
+}
+
+QSpinBox::down-arrow,
+QDoubleSpinBox::down-arrow {
+	image: $image-arrow-down;
+}

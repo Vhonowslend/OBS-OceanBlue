@@ -1,0 +1,35 @@
+QTabWidget {
+}
+
+QTabWidget::tab-bar {
+	padding: 0px $text-padding;
+}
+
+QTabWidget::pane {
+	background: $group-bg;
+	border: $control-border solid $group-bd;
+	border-radius: 1px;
+	margin-top: -$control-border;
+	padding: 0px;
+}
+
+QTabBar::tab {
+	padding: $control-padding $text-padding;
+	height: $control-inner-size;
+	border: $control-border solid $group-bd;
+	background: $group-bg;
+	border-top-left-radius: $control-border * 3;
+	border-top-right-radius: $control-border * 3;
+	margin-right: $control-border * 3;
+}
+
+QTabBar::tab:hover {
+	background: $control-bg-active;
+	border-color: $control-bg-active;
+}
+
+QTabBar::tab:selected {
+	background: $control-bg-focus;
+	border-color: $control-bg-focus;
+	border-bottom-color: transparent;
+}

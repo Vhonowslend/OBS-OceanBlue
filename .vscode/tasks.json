@@ -6,7 +6,12 @@
 		{
 			"label": "Compile",
 			"type": "shell",
-			"command": "sass oceanblue.scss build/OceanBlue.qss"
+			"command": "sass --no-charset oceanblue.scss build/OceanBlue.qss",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }

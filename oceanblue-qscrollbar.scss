@@ -1,0 +1,128 @@
+$qscrollbar-button-size: $scrollbar-size - ($control-padding + $control-border) * 2;
+
+QScrollBar {
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;
+	background-color: $control-bg-disabled;
+}
+QScrollBar:vertical {
+	width: $scrollbar-size;
+	margin: $scrollbar-size 0px;
+}
+QScrollBar:horizontal {
+	height: $scrollbar-size;
+	margin: 0px $scrollbar-size;
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+	width: $qscrollbar-button-size;
+	height: $qscrollbar-button-size;
+	padding: $control-padding;
+	border: $control-border solid $control-bg;
+	background-color: $control-bg;
+	color: $control-fg;
+}
+
+QScrollBar::add-line:focus,
+QScrollBar::add-line:hover,
+QScrollBar::sub-line:focus,
+QScrollBar::sub-line:hover {
+	border-color: $control-bg-focus;
+	background-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QScrollBar::add-line:pressed,
+QScrollBar::sub-line:pressed {
+	border-color: $control-bg-active;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QScrollBar::add-line:disabled,
+QScrollBar::sub-line:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}
+
+QScrollBar::sub-line:vertical {
+	top: -$scrollbar-size;
+}
+QScrollBar::add-line:vertical {
+	bottom: -$scrollbar-size;
+}
+
+QScrollBar::sub-line:horizontal {
+	left: -$scrollbar-size;
+}
+QScrollBar::add-line:horizontal {
+	right: -$scrollbar-size;
+}
+
+QScrollBar::left-arrow,
+QScrollBar::right-arrow,
+QScrollBar::up-arrow,
+QScrollBar::down-arrow {
+	width: $qscrollbar-button-size;
+	height: $qscrollbar-button-size;
+}
+
+QScrollBar::left-arrow {
+	image: $image-arrow-left;
+}
+
+QScrollBar::right-arrow {
+	image: $image-arrow-right;
+}
+
+QScrollBar::up-arrow {
+	image: $image-arrow-up;
+}
+
+QScrollBar::down-arrow {
+	image: $image-arrow-down;
+}
+
+QScrollBar::handle {
+	padding: $control-padding;
+	background-color: $control-bg;
+	border: $control-border solid $control-bg;
+	color: $control-fg;
+}
+
+QScrollBar::handle:hover,
+QScrollBar::handle:focus {
+	background-color: $control-bg-focus;
+	border-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QScrollBar::handle:pressed {
+	background-color: $control-bg-active;
+	border-color: $control-bg-active;
+	color: $control-fg-active;
+	border-style: inset;
+}
+
+QScrollBar::handle:disabled {
+	background-color: $control-bg-disabled;
+	border-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}
+
+QScrollBar::handle:vertical {
+	min-height: $qscrollbar-button-size;
+	width: $scrollbar-size - ($control-border + $control-padding) * 2;
+}
+QScrollBar::handle:horizontal {
+	min-width: $qscrollbar-button-size;
+	height: $scrollbar-size - ($control-border + $control-padding) * 2;
+}
+
+QScrollBar::add-page,
+QScrollBar::sub-page {
+	background: transparent;
+}

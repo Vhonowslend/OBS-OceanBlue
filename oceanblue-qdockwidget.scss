@@ -1,0 +1,59 @@
+QDockWidget {
+	titlebar-close-icon: $image-btn-close;
+	titlebar-normal-icon: $image-btn-restore;
+
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;
+	background-color: $group-bg;
+	color: $group-fg;
+}
+
+QDockWidget::title {
+	border: 0px solid $header-bg;
+	background-color: $header-bg;
+	color: $header-fg;
+}
+
+QDockWidget::title:hover,
+QDockWidget::title:focus {
+	border-color: $header-bg-focus;
+	background-color: $header-bg-focus;
+	color: $header-fg-focus;
+}
+
+QDockWidget::float-button,
+QDockWidget::close-button {
+	background-color: $control-bg;
+	color: $control-fg;
+	icon-size: 50px;
+}
+
+QDockWidget::float-button:hover,
+QDockWidget::float-button:focus,
+QDockWidget::close-button:hover,
+QDockWidget::close-button:focus {
+	border-color: $control-bg-focus;
+	background-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QDockWidget::float-button:pressed,
+QDockWidget::close-button:pressed {
+	border-color: $control-bg-active;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QDockWidget::float-button:disabled,
+QDockWidget::close-button:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+	border-style: inset;
+}
+
+// What's this for?
+//QDockWidget > QWidget {
+//	background: hsla(210, 100%, 50%, 12.5%);
+//}

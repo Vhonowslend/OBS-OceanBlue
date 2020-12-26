@@ -1,0 +1,58 @@
+$qslider-groove-size: 4px;
+$qslider-handle-size: $control-size / 2;
+$qslider-handle-size-inner: $qslider-handle-size - ($control-padding + $control-border) * 2;
+$qslider-offset: ($control-size - $qslider-groove-size) / 2;
+
+QSlider {
+}
+QSlider:horizontal {
+	min-height: $control-size;
+}
+QSlider:vertical {
+	min-width: $control-size;
+}
+
+QSlider::groove {
+	background: $control-bg-disabled;
+}
+QSlider::groove:horizontal {
+	height: $qslider-groove-size;
+}
+QSlider::groove:vertical {
+	width: $qslider-groove-size;
+}
+
+QSlider::handle {
+	background-color: $control-bg;
+	border: $control-border solid $control-bg;
+	color: $control-fg;
+}
+QSlider::handle:horizontal {
+	width: $qslider-handle-size-inner;
+	top: -$qslider-offset;
+	bottom: -$qslider-offset;
+}
+QSlider::handle:vertical {
+	height: $qslider-handle-size-inner;
+	left: -$qslider-offset;
+	right: -$qslider-offset;
+}
+
+QSlider::handle:hover {
+	background-color: $control-bg-focus;
+	border-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QSlider::handle:pressed {
+	background-color: $control-bg-active;
+	border-color: $control-bg-active;
+	border-style: inset;
+	color: $control-fg-active;
+}
+
+QSlider::handle:disabled {
+	background-color: $control-bg-disabled;
+	border-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}

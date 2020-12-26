@@ -1,0 +1,17 @@
+OBSPropertiesView {
+	$padding: 1px;
+	$border: 1px;
+	
+	padding: $padding;
+
+	border: $border solid $group-bd;
+	border-radius: 1px; // TODO: Configurable
+	background-color: $group-bg;
+	color: $group-fg;
+}
+
+OBSPropertiesView:disabled {
+	background-color: $group-bg-disabled;
+	border-color: $group-bd-disabled;
+	color: $group-fg-disabled;
+}

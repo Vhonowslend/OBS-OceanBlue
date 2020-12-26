@@ -1,0 +1,55 @@
+QCheckBox {
+	height: $control-size;
+	color: $control-fg;
+}
+
+QCheckBox:hover,
+QCheckBox:focus {
+	color: $control-fg-focus;
+}
+
+QCheckBox:disabled {
+	color: $control-fg-disabled;
+}
+
+QCheckBox::indicator {
+	$border: 1px;
+	$padding: 1px;
+	$size: $control-size - ($border + $padding) * 2;
+
+	background: $control-bg;
+	border: $border solid $control-bg;
+	padding: $padding;
+
+	width: $size;
+	height: $size;
+}
+
+QCheckBox::indicator:hover,
+QCheckBox::indicator:focus {
+	background: $control-bg-focus;
+	border-color: $control-bg-focus;
+}
+
+QCheckBox::indicator:pressed {
+	background: $control-bg-active;
+	border-color: $control-bg-active;
+	border-style: inset;
+}
+
+QCheckBox::indicator:disabled {
+	background: $control-bg-disabled;
+	border-color: $control-bg-disabled;
+}
+
+QCheckBox::indicator:indeterminate {
+	image: $image-checkmark-unknown;
+}
+
+QCheckBox::indicator:unchecked {
+	image: $image-checkmark-off;
+}
+
+QCheckBox::indicator:checked  {
+	image: $image-checkmark-on;
+}

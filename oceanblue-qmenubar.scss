@@ -1,0 +1,48 @@
+QMenuBar {
+	background: $menu-bg;
+	color: $menu-fg;
+	spacing: 5px;
+	
+	// TODO: This makes everything disappear :-(
+	//min-height: $control-size;
+	//max-height: $control-size;
+}
+
+QMenuBar:disabled {
+	background: $menu-bg-disabled;
+	color: $menu-fg-disabled;
+}
+
+QMenuBar::item {
+	$border: 1px;
+	$padding: 0px;
+	$size: $control-size - ($border + $padding) * 2;
+	
+	height: $size;
+	min-height: $size;
+	max-height: $size;
+	padding: $padding 10px;
+
+	background: $menu-bg;
+	border: $border solid $menu-bg;
+	color: $menu-fg;
+}
+
+QMenuBar::item:selected {
+	background: $menu-bg-focus;
+	border-color: $menu-bg-focus;
+	color: $menu-fg-focus;
+}
+
+QMenuBar::item:pressed {
+	background: $menu-bg-active;
+	border-color: $menu-bg-active;
+	border-style: inset;
+	color: $menu-fg-active;
+}
+
+QMenuBar::item:disabled {
+	background: $menu-bg-disabled;
+	border-color: $menu-bg-disabled;
+	color: $menu-fg-disabled;
+}

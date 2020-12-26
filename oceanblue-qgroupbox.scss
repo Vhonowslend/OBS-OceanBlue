@@ -1,0 +1,76 @@
+QGroupBox {
+	$padding: 1px;
+	$border: 1px;
+	
+	padding: $padding;
+	padding-top: $control-size / 4 * 3;
+	margin-top: $control-size / 4;
+
+	border: $border solid $group-bd;
+	border-radius: 1px; // TODO: Configurable
+	background-color: $group-bg;
+	color: $group-fg;
+}
+
+QGroupBox::title {
+	$padding: 1px;
+	$border: 1px;
+	$size: $control-size - ($padding + $border) * 2;
+
+	left: $control-size / 2;
+	top: -$control-size / 4;
+	height: $size;
+	padding: $padding $text-padding;
+	border: 1px solid $group-bd-title;
+	border-radius: 1px;	
+	background-color: $group-bg-title;
+	color: $group-fg-title;
+}
+
+QGroupBox:disabled {
+	background-color: $group-bg-disabled;
+	border-color: $group-bd-disabled;
+	color: $group-fg-disabled;
+}
+
+QGroupBox::indicator { // TODO: Actually see how this looks.
+	$border: 1px;
+	$padding: 1px;
+	$size: $control-size - ($border + $padding) * 2;
+
+	background: $control-bg;
+	border: $border solid $control-bg;
+	padding: $padding;
+
+	width: $size;
+	height: $size;
+}
+
+QGroupBox::indicator:hover,
+QGroupBox::indicator:focus {
+	background: $control-bg-focus;
+	border-color: $control-bg-focus;
+}
+
+QGroupBox::indicator:pressed {
+	background: $control-bg-active;
+	border-color: $control-bg-active;
+	border-style: inset;
+}
+
+QGroupBox::indicator:disabled {
+	background: $control-bg-disabled;
+	border-color: $control-bg-disabled;
+}
+
+QGroupBox::indicator:indeterminate {
+	image: $image-checkmark-unknown;
+}
+
+QGroupBox::indicator:unchecked {
+	image: $image-checkmark-off;
+}
+
+QGroupBox::indicator:checked  {
+	image: $image-checkmark-on;
+}

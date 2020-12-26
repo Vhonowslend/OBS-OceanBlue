@@ -1,0 +1,77 @@
+QComboBox {
+	height: $control-inner-size;
+	padding: $control-padding $text-padding;
+	margin-right: $control-size;
+	border: $control-border solid $control-bg;
+	background-color: $control-bg;
+	color: $control-fg;
+
+	selection-color: $control-fg-focus;
+	selection-background-color: $control-bg-focus;
+}
+
+QComboBox:hover,
+QComboBox:focus {
+	border-color: $control-bg-focus;
+	background-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QComboBox:editable:hover,
+QComboBox:editable:focus {
+	// Editable QComboBoxes have a broken QLineEdit embedded in them.
+	border-color: $control-bg;
+	background-color: $control-bg;
+	color: $control-fg;
+}
+
+QComboBox:on {
+	border-color: $control-bg-active;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QComboBox:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}
+
+// Drop Button (not the Image)
+QComboBox::drop-down {
+	width: $control-size - ($control-padding * 2 + $control-border);
+	height: $control-size;
+	padding: $control-padding;
+	border-left: $control-border solid $control-bg;
+	background-color: $control-bg;
+	color: $control-fg;
+	top: -($control-border);
+	right: -($control-border + $control-size);
+}
+QComboBox::drop-down:hover {
+	border-color: $control-bg-focus;
+	background-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+QComboBox::drop-down:on {
+	border-color: $control-bg-active;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+QComboBox::drop-down:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}
+
+// Down Arrow (the Image)
+QComboBox::down-arrow {
+	$padding: 2px;
+	$size: $control-size - ($padding * 2);
+	width: $size;
+	height: $size;
+	image: $image-arrow-down;
+}
+QComboBox::down-arrow:on {
+	top: 2px;
+}

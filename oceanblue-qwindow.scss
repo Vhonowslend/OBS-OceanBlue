@@ -1,0 +1,11 @@
+QMainWindow, QDockWidget, QDialog {
+	background: $window-bg;
+	color: $window-fg;
+}
+
+QMainWindow:disabled,
+QDockWidget:disabled,
+QDialog:disabled {
+	background: $window-bg-disabled;
+	color: $window-fg-disabled;
+}

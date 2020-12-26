@@ -1,0 +1,25 @@
+QListView {
+	background: $group-bg;
+	border: $control-border solid $group-bd;
+	color: $group-fg;
+}
+
+QListView::item {
+	height: $control-size;
+	padding: 0px;
+
+	color: $group-fg;
+}
+
+QListView::item:selected {
+	background-color: $control-bg-active;
+	border-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QListView::item:hover,
+QListView::item:focus {
+	background-color: $control-bg-focus;
+	border-color: $control-bg-focus;
+	color: $control-fg-focus;
+}

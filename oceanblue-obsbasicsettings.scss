@@ -1,0 +1,14 @@
+
+OBSBasicSettings {
+    qproperty-generalIcon: url(./OceanBlue/settings_general.svg);
+    qproperty-streamIcon: url(./OceanBlue/settings_stream.svg);
+    qproperty-outputIcon: url(./OceanBlue/settings_output.svg);
+    qproperty-audioIcon: url(./OceanBlue/settings_audio.svg);
+    qproperty-videoIcon: url(./OceanBlue/settings_video.svg);
+    qproperty-hotkeysIcon: url(./OceanBlue/settings_hotkeys.svg);
+    qproperty-advancedIcon: url(./OceanBlue/settings_advanced.svg);
+}
+
+OBSBasicSettings #listWidget::item {
+	height: $control-size * 2 - ($control-padding + $control-border) * 2;
+}

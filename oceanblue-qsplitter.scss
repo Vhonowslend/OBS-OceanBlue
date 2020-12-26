@@ -1,0 +1,21 @@
+QSplitter::handle {
+	padding: 0px;
+	border: 1px solid $control-bg;
+	background: $control-bg-disabled;
+}
+
+QSplitter::handle:horizontal {
+	min-width: 1px;
+	max-width: 1px;
+	margin: 0px 3px;
+	border-top-style: none;
+	border-bottom-style: none;
+}
+
+QSplitter::handle:vertical {
+	min-height: 1px;
+	max-height: 1px;
+	margin: 3px 0px;
+	border-left-style: none;
+	border-right-style: none;
+}

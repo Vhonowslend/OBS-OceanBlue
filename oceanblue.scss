@@ -1,12 +1,136 @@
-// Colors: Primary, Secondary, Tertiary
+/* Ocean Blue 
+ * by Michael Fabian 'Xaymar' Dirks <info@xaymar.com>
+ * https://xaymar.com/
+**/
+
+// TODO
+// - Hotkeys
+// - Scene/Source list
+// - Some sort of view inside stats?
+// - statusbar
+
+// Settings
+$control-border: 1px;
+$control-padding: 1px;
+$control-size: 20px;
+$control-inner-size: $control-size - ($control-border + $control-padding) * 2;
+$scrollbar-size: 15px;
+$text-padding: 5px;
+$font-default-face: "Open Sans", "Roboto", sans-serif;
+$font-default-size: 12px;
+
+// Palette
 $primary-hue: 210;
 $primary-sat: 100%;
-$primary-lum: 50%;
 $secondary-hue: 210;
 $secondary-sat: 100%;
-$secondary-lum: 50%;
 $tertiary-hue: 0;
 $tertiary-sat: 0%;
-$tertiary-lum: 100%;
+$fg: hsl($tertiary-hue, $tertiary-sat, 95%);
+$fg-highlight: hsl($tertiary-hue, $tertiary-sat, 100%);
 
-@import "oceanblue-obstheme.scss"
+$window-bg: hsl($primary-hue, $primary-sat, 5%);
+$window-bg-disabled: hsl($primary-hue, $primary-sat * 0.5, 10%);
+$window-fg: $fg;
+$window-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+
+$header-bg: hsl($primary-hue, $primary-sat, 20%);
+$header-bg-focus: hsl($primary-hue, $primary-sat, 30%);
+$header-fg: $fg;
+$header-fg-focus: $fg-highlight;
+
+$menu-bg: hsl($primary-hue, $primary-sat, 100% / 6);
+$menu-bg-focus: hsl($primary-hue, $primary-sat, 50%);
+$menu-bg-active: hsl($primary-hue, $primary-sat, 100% / 3);
+$menu-bg-disabled: hsl($primary-hue, 0%, 100% / 6);
+$menu-fg: $fg;
+$menu-fg-focus: $fg-highlight;
+$menu-fg-active: $fg;
+$menu-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+
+$control-bg: hsl($primary-hue, $primary-sat, 30%);
+$control-bg-focus: hsl($primary-hue, $primary-sat, 50%);
+$control-bg-active: hsl($primary-hue, $primary-sat, 40%);
+$control-bg-disabled: hsl($primary-hue, $primary-sat * 0.5, 20%);
+$control-fg: $fg;
+$control-fg-focus: $fg-highlight;
+$control-fg-active: $fg;
+$control-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+
+$group-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
+$group-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
+$group-bg-title: $control-bg;
+$group-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
+$group-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
+$group-bd-title: $control-bg-focus;
+$group-fg: $control-fg;
+$group-fg-disabled: $control-fg-disabled;
+$group-fg-title: $control-fg;
+
+// Images
+$image-zero: url(./OceanBlue/zero.svg);
+$image-checkmark-unknown: url(./OceanBlue/indicator_indeterminate.svg);
+$image-checkmark-off: url(./OceanBlue/indicator_unchecked.svg);
+$image-checkmark-on: url(./OceanBlue/indicator_checked.svg);
+$image-arrow-left: url(./OceanBlue/arrow_left.svg);
+$image-arrow-left2: url(./OceanBlue/arrow_left_twice.svg);
+$image-arrow-right: url(./OceanBlue/arrow_right.svg);
+$image-arrow-right2: url(./OceanBlue/arrow_right_twice.svg);
+$image-arrow-up: url(./OceanBlue/arrow_up.svg);
+$image-arrow-up2: url(./OceanBlue/arrow_up_twice.svg);
+$image-arrow-down: url(./OceanBlue/arrow_down.svg);
+$image-arrow-down2: url(./OceanBlue/arrow_down_twice.svg);
+$image-dot: url(./OceanBlue/dot.svg);
+$image-lock-open: url(./OceanBlue/lock_open.svg);
+$image-lock-closed: url(./OceanBlue/lock_closed.svg);
+$image-eye-open: url(./OceanBlue/eye_open.svg);
+$image-eye-closed: url(./OceanBlue/eye_closed.svg);
+$image-audio-muted: url(./OceanBlue/audio_muted.svg);
+$image-audio-unmuted: url(./OceanBlue/audio_unmuted.svg);
+$image-btn-minimize: url(./OceanBlue/window_minimize.svg);
+$image-btn-maximize: url(./OceanBlue/window_maximize.svg);
+$image-btn-restore: url(./OceanBlue/window_restore.svg);
+$image-btn-close: url(./OceanBlue/window_close.svg);
+$image-btn-plus: url(./OceanBlue/plus.svg);
+$image-btn-minus: url(./OceanBlue/minus.svg);
+$image-btn-gear: url(./OceanBlue/gear.svg);
+$image-btn-trash: url(./OceanBlue/trash.svg);
+$image-btn-undo: url(./OceanBlue/undo.svg);
+$image-settings-general: url(./OceanBlue/settings_general.svg);
+$image-settings-stream: url(./OceanBlue/settings_stream.svg);
+$image-settings-output: url(./OceanBlue/settings_output.svg);
+$image-settings-video: url(./OceanBlue/settings_video.svg);
+$image-settings-audio: url(./OceanBlue/settings_audio.svg);
+$image-settings-hotkeys: url(./OceanBlue/settings_hotkeys.svg);
+$image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
+
+// Import critical parts
+@import "oceanblue-defaults.scss";
+@import "oceanblue-qwindow.scss";
+
+// Containers
+@import "oceanblue-qdockwidget.scss";
+@import "oceanblue-qgroupbox.scss";
+@import "oceanblue-qtabwidget.scss";
+@import "oceanblue-qlistwidget.scss";
+
+// Passive Controls
+@import "oceanblue-qmenu.scss";
+@import "oceanblue-qmenubar.scss";
+@import "oceanblue-qscrollbar.scss";
+@import "oceanblue-qsplitter.scss";
+
+// Controls
+@import "oceanblue-qcheckbox.scss";
+@import "oceanblue-qcombobox.scss";
+@import "oceanblue-qlineedit.scss";
+@import "oceanblue-qpushbutton.scss";
+@import "oceanblue-qradiobutton.scss";
+@import "oceanblue-qslider.scss";
+@import "oceanblue-qspinbox.scss";
+
+// Import OBS Styles
+@import "oceanblue-obstheme.scss";
+@import "oceanblue-obsbasicsettings.scss";
+@import "oceanblue-obsqtdisplay.scss";
+@import "oceanblue-obspropertiesview.scss";

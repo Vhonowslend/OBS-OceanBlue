@@ -1,0 +1,89 @@
+// TODO: Shits broken, yo!
+
+QMenu {
+	background: $menu-bg;
+	border: 1px solid $menu-bg;
+	padding: 0px;
+	margin: 0px;
+}
+
+QMenu::item {
+	height: $control-size;
+	padding: 0px 5px;
+	padding-left: $control-size;
+	margin: 0px;
+	border: 0px solid transparent;
+	background: $menu-bg;
+	color: $menu-fg;
+}
+
+QMenu::item:selected {
+	background: $menu-bg-focus;
+	color: $menu-fg-focus;
+}
+
+QMenu::item:disabled {
+	background: $menu-bg-disabled;
+	color: $menu-fg-disabled;
+}
+
+QMenu::separator {
+	height: 0px;
+	margin: 4px 0px;
+	border: 1px inset rgba(0, 0, 0, 20%);
+}
+
+QMenu::indicator {
+	$margin: 2px;
+	$size: $control-size - ($margin) * 2;
+
+	// Do not enable these, they completely break layouting.
+	//min-width: $size;
+	//min-height: $size;
+	//max-width: $size;
+	//max-height: $size;
+	width: $size;
+	height: $size;
+	margin: $margin;
+	margin-right: -$control-size;
+	padding: 0px;
+}
+
+QMenu::indicator:non-exclusive:unchecked,
+QMenu::indicator:non-exclusive:unchecked:selected {
+	image: $image-checkmark-off;
+}
+
+QMenu::indicator:non-exclusive:checked,
+QMenu::indicator:non-exclusive:checked:selected {
+	image: $image-checkmark-on;
+}
+
+QMenu::indicator:exclusive:unchecked,
+QMenu::indicator:exclusive:unchecked:selected {
+	image: $image-checkmark-off;
+}
+
+QMenu::indicator:exclusive:checked,
+QMenu::indicator:exclusive:checked:selected {
+	image: $image-checkmark-on;
+}
+
+QMenu::left-arrow,
+QMenu::right-arrow {
+	width: $control-size / 2;
+	height: $control-size / 2;
+}
+
+QMenu::left-arrow {
+	image: $image-arrow-left;
+}
+
+QMenu::right-arrow {
+	image: $image-arrow-right;
+}
+
+// TODO: Figure out what actually uses this.
+QMenu::icon:checked {
+	background: red;
+}

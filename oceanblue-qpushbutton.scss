@@ -1,0 +1,46 @@
+QPushButton {
+	$border: 1px;
+	$padding: 1px;
+	$size: $control-size - ($border + $padding) * 2;
+
+	//min-width: $size;
+	height: $size;
+	padding: $padding $text-padding;
+	border: 1px solid $control-bg;
+	background-color: $control-bg;	
+	color: $control-fg;
+
+	// TODO: border-radius?
+	//border-radius: 1px;
+}
+
+QPushButton:checked {
+	image: $image-checkmark-on;
+	image-position: right center;
+}
+
+QPushButton:flat {
+	// TODO: Figure out what differentiates flat from non-flat.
+	border-color: transparent;
+	background-color: transparent;
+}
+
+QPushButton:hover,
+QPushButton:focus {
+	background-color: $control-bg-focus;
+	border-color: $control-bg-focus;
+	color: $control-fg-focus;
+}
+
+QPushButton:pressed {
+	background-color: $control-bg-active;
+	border-color: $control-bg-active;
+	border-style: inset;
+	color: $control-fg-active;
+}
+
+QPushButton:disabled {
+	background-color: $control-bg-disabled;
+	border-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+}

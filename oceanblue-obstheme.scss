@@ -1,24 +1,128 @@
-OBSTheme {
-	base: rgb(255, 0, 255);
-	alternateBase: rgb(255, 0, 255);
+QMainWindow, QDialog, QWidget, OBSTheme {
+	$test0: "rgb(255, 0, 0)";
+	$test1: "rgb(255, 128, 0)";
+	$test2: "rgb(255, 255, 0)";
+	$test3: "rgb(128, 255, 0)";
+	$test4: "rgb(0, 255, 0)";
+	$test5: "rgb(0, 255, 128)";
+	$test6: "rgb(0, 255, 255)";
+	$test7: "rgb(0, 128, 255)";
+	$test8: "rgb(0, 0, 255)";
+	$test9: "rgb(128, 0, 255)";
+	$test10: "rgb(255, 0, 255)";
+	base: unquote($test0);
+	alternateBase: unquote($test1);
 
-	window: rgb(255, 0, 255);
-	windowText: rgb(255, 0, 255);
+	// Affects
+	// - Hotkey Buttons (disabled)
+	window: unquote($test10);
 
-	button: rgb(255, 0, 255);
-	buttonText: rgb(255, 0, 255);
+	// Affects
+	// - QLabel
+	windowText: $fg;
 
-	highlight: rgb(255, 0, 255);
-	highlightText: rgb(255, 0, 255);
+	button: unquote($test3);
+	buttonText: $fg;
 
-	text: hsla($tertiary-hue, $tertiary-sat, $tertiary-lum * 0.95, 1.0);
-	brightText: hsl($tertiary-hue, $tertiary-sat, $tertiary-lum);
+	text: $fg;
+	brightText: $fg-highlight;
+	highlightText: $fg-highlight;
 
-	link: rgb(255, 0, 255);
-	linkVisited: rgb(255, 0, 255);
+	link: unquote($test4);
+	linkVisited: unquote($test5);
 
-	light: rgb(255, 0, 255);
-	mid: rgb(255, 0, 255);
-	dark: rgb(255, 0, 255);
-	shadow: rgb(255, 0, 255);
+	// shadow affects:
+	// - QScrollBar (bottom & right border)
+	shadow: unquote($test6);
+
+	dark: unquote($test7);
+
+	mid: unquote($test8);
+
+	midlight: $control-bg-active;
+
+	// light affects:
+	// - QScrollBar (top & left border)
+	light: unquote($test9);
+
+	highlight: $control-bg-focus;
 }
+
+* [themeID="addIconSmall"] {
+	qproperty-icon: url(./OceanBlue/plus.svg);
+}
+
+* [themeID="removeIconSmall"] {
+	qproperty-icon: url(./OceanBlue/minus.svg);
+}
+
+* [themeID="upArrowIconSmall"] {
+	qproperty-icon: url(./OceanBlue/arrow_up.svg);
+}
+
+* [themeID="downArrowIconSmall"] {
+	qproperty-icon: url(./OceanBlue/arrow_down.svg);
+}
+
+* [themeID="propertiesIconSmall"],
+* [themeID="configIconSmall"] {
+	qproperty-icon: url(./OceanBlue/gear.svg);
+}
+
+* [themeID="revertIcon"] {
+	qproperty-icon: url(./OceanBlue/undo.svg);
+}
+
+* [themeID="trashIcon"] {
+	qproperty-icon: url(./OceanBlue/trash.svg);
+}
+
+// -----------------------------------------------------------------------------
+// Custom CheckBoxes
+
+VisibilityCheckBox,
+LockedCheckBox,
+MuteCheckBox {
+	width: $control-size;
+	height: $control-size;
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+}
+
+VisibilityCheckBox::indicator,
+LockedCheckBox::indicator,
+MuteCheckBox::indicator {
+	// For unknown reasons, the parent item has 1px padding and border.
+	width: $control-size - 4px;
+	height: $control-size - 4px;
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+	background: transparent;
+}
+
+VisibilityCheckBox::indicator:checked {
+	image: url(./OceanBlue/eye_open.svg);
+}
+
+VisibilityCheckBox::indicator:unchecked {
+	image: url(./OceanBlue/eye_closed.svg);
+}
+
+LockedCheckBox::indicator:checked {
+	image: url(./OceanBlue/lock_closed.svg);
+}
+
+LockedCheckBox::indicator:unchecked {
+	image: url(./OceanBlue/lock_open.svg);
+}
+
+MuteCheckBox::indicator:checked {
+	image: url(./OceanBlue/audio_muted.svg);
+}
+
+MuteCheckBox::indicator:unchecked {
+	image: url(./OceanBlue/audio_unmuted.svg);
+}
+
