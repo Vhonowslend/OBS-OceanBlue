@@ -1,11 +1,8 @@
-OBSBasic OBSQTDisplay {
-	/* But we don't want that to affect anything else. */
-	qproperty-displayBackgroundColor: $window-bg;
-}
+/* Sources look weird if the background isn't black. */
 
+OBSBasic OBSQTDisplay,
 OBSBasicFilters OBSQTDisplay,
 OBSBasicInteraction OBSQTDisplay,
 OBSBasicProperties OBSQTDisplay {
-	/* Sources look weird if the background isn't black. */
 	qproperty-displayBackgroundColor: black;
 }

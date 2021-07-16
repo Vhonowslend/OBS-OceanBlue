@@ -1,20 +1,44 @@
-QMainWindow, QDialog, QWidget, OBSTheme {
-	$test0: "rgb(255, 0, 0)";
-	$test1: "rgb(255, 128, 0)";
-	$test2: "rgb(255, 255, 0)";
-	$test3: "rgb(128, 255, 0)";
-	$test4: "rgb(0, 255, 0)";
-	$test5: "rgb(0, 255, 128)";
-	$test6: "rgb(0, 255, 255)";
-	$test7: "rgb(0, 128, 255)";
-	$test8: "rgb(0, 0, 255)";
-	$test9: "rgb(128, 0, 255)";
-	$test10: "rgb(255, 0, 255)";
+@use "util.scss";
+
+$test0: "rgb(255, 0, 0)";
+$test1: "rgb(255, 128, 0)";
+$test2: "rgb(255, 255, 0)";
+$test3: "rgb(128, 255, 0)";
+$test4: "rgb(0, 255, 0)";
+$test5: "rgb(0, 255, 128)";
+$test6: "rgb(0, 255, 255)";
+$test7: "rgb(0, 128, 255)";
+$test8: "rgb(0, 0, 255)";
+$test9: "rgb(128, 0, 255)";
+$test10: "rgb(255, 0, 255)";
+
+OBSTheme {
+	// - alternateBase
+	// - base
+	// - button
+	// - buttonText
+	// - brightText
+	// - dark
+	// - highlight
+	// - highlightedText
+	// - light
+	// - link
+	// - linkVisited
+	// - mid
+	// - midlight
+	// - shadow
+	// - text, foreground
+	// - toolTipBase
+	// - toolTipText
+	// - windowText, windowForeground
+	// - window, background
+	// - placeholderText
+
 	base: unquote($test0);
 	alternateBase: unquote($test1);
 
 	// Affects
-	// - Hotkey Buttons (disabled)
+	// - Hotkey Buttons (disabled, enabled)
 	window: unquote($test10);
 
 	// Affects
@@ -48,81 +72,15 @@ QMainWindow, QDialog, QWidget, OBSTheme {
 	highlight: $control-bg-focus;
 }
 
-* [themeID="addIconSmall"] {
-	qproperty-icon: url(./OceanBlue/plus.svg);
+
+OBSTheme:disabled {
+
 }
 
-* [themeID="removeIconSmall"] {
-	qproperty-icon: url(./OceanBlue/minus.svg);
+OBSTheme:active {
+
 }
 
-* [themeID="upArrowIconSmall"] {
-	qproperty-icon: url(./OceanBlue/arrow_up.svg);
+OBSTheme:inactive {
+
 }
-
-* [themeID="downArrowIconSmall"] {
-	qproperty-icon: url(./OceanBlue/arrow_down.svg);
-}
-
-* [themeID="propertiesIconSmall"],
-* [themeID="configIconSmall"] {
-	qproperty-icon: url(./OceanBlue/gear.svg);
-}
-
-* [themeID="revertIcon"] {
-	qproperty-icon: url(./OceanBlue/undo.svg);
-}
-
-* [themeID="trashIcon"] {
-	qproperty-icon: url(./OceanBlue/trash.svg);
-}
-
-// -----------------------------------------------------------------------------
-// Custom CheckBoxes
-
-VisibilityCheckBox,
-LockedCheckBox,
-MuteCheckBox {
-	width: $control-size;
-	height: $control-size;
-	padding: 0px;
-	margin: 0px;
-	border-width: 0px;
-}
-
-VisibilityCheckBox::indicator,
-LockedCheckBox::indicator,
-MuteCheckBox::indicator {
-	// For unknown reasons, the parent item has 1px padding and border.
-	width: $control-size - 4px;
-	height: $control-size - 4px;
-	padding: 0px;
-	margin: 0px;
-	border-width: 0px;
-	background: transparent;
-}
-
-VisibilityCheckBox::indicator:checked {
-	image: url(./OceanBlue/eye_open.svg);
-}
-
-VisibilityCheckBox::indicator:unchecked {
-	image: url(./OceanBlue/eye_closed.svg);
-}
-
-LockedCheckBox::indicator:checked {
-	image: url(./OceanBlue/lock_closed.svg);
-}
-
-LockedCheckBox::indicator:unchecked {
-	image: url(./OceanBlue/lock_open.svg);
-}
-
-MuteCheckBox::indicator:checked {
-	image: url(./OceanBlue/audio_muted.svg);
-}
-
-MuteCheckBox::indicator:unchecked {
-	image: url(./OceanBlue/audio_unmuted.svg);
-}
-

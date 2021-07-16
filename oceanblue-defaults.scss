@@ -33,18 +33,18 @@ QSlider, QSlider::handle,
 QSpinBox, QSpinBox::up-button, QSpinBox::down-button, QSpinBox::up-arrow, QSpinBox::down-arrow,
 QSplitter, QSplitter::handle,
 QStatusBar, QStatusBar::item,
-QTabBar, QTabBar::tab, QTabBar::close-button, QTabBar::tear, QTabBar::scroller, 
+QTabBar, QTabBar::tab, QTabBar::close-button, QTabBar::tear, QTabBar::scroller,
 QTabWidget, QTabWidget::pane, QTabWidget::left-corner, QTabWidget::right-corner, QTabWidget::tab-bar,
 QTableView,
 QTableWidget,
 QTextEdit,
 QTimeEdit, QTimeEdit::up-button, QTimeEdit::down-button, QTimeEdit::up-arrow, QTimeEdit::down-arrow,
-QToolBar, QToolBar::separator, QToolBar::handle, 
+QToolBar, QToolBar::separator, QToolBar::handle,
 QToolButton, QToolButton::menu-indicator, QToolButton::menu-button, QToolButton::menu-arrow, QToolButton::up-arrow, QToolButton::down-arrow, QToolButton::left-arrow, QToolButton::right-arrow,
-QToolBox, QToolBox::tab, 
-QToolTip, 
-QTreeView, QTreeView::branch, QTreeView::item,
-QWidget {
+QToolBox, QToolBox::tab,
+QToolTip,
+QTreeView, QTreeView::branch, QTreeView::item
+{
 	background-color: transparent;
 	border-color: transparent;
 	border-style: solid;

@@ -1,11 +1,10 @@
-QMainWindow, QDockWidget, QDialog {
-	background: $window-bg;
+QMainWindow, QDialog {
+	background-color: $window-bg;
 	color: $window-fg;
 }
 
 QMainWindow:disabled,
-QDockWidget:disabled,
 QDialog:disabled {
-	background: $window-bg-disabled;
+	background-color: $window-bg-disabled;
 	color: $window-fg-disabled;
 }

@@ -1,0 +1,5 @@
+@use "sass:color";
+
+@function asRGB($anycolor) {
+	@return "rgb(" + color.red($anycolor)+ ", " + color.green($anycolor) + ", " + color.blue($anycolor) + ")";
+}

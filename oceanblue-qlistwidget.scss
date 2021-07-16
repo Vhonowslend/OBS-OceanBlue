@@ -1,14 +1,24 @@
+$listwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
+$listwidget-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
+$listwidget-fg: $control-fg;
+$listwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
+$listwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
+$listwidget-fg-disabled: $control-fg-disabled;
+$listwidget-title-bg: hsl($primary-hue, $primary-sat * 0.8, 75%);
+$listwidget-title-bd: hsl($primary-hue, $primary-sat, 50%);
+$listwidget-title-fg: $control-fg;
+
 QListView {
-	background: $group-bg;
-	border: $control-border solid $group-bd;
-	color: $group-fg;
+	background: $listwidget-bg;
+	border: $control-border solid $listwidget-bd;
+	color: $listwidget-fg;
 }
 
 QListView::item {
 	height: $control-size;
 	padding: 0px;
 
-	color: $group-fg;
+	color: $listwidget-fg;
 }
 
 QListView::item:selected {

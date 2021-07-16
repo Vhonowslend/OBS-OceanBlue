@@ -1,48 +1,57 @@
+$menubar-bg: hsl($primary-hue, $primary-sat, 100% / 8);
+$menubar-bg-focus: hsl($primary-hue, $primary-sat, 50%);
+$menubar-bg-active: hsl($primary-hue, $primary-sat, 100% / 3);
+$menubar-bg-disabled: hsl($primary-hue, 0%, 100% / 6);
+$menubar-fg: $fg;
+$menubar-fg-focus: $fg-highlight;
+$menubar-fg-active: $fg;
+$menubar-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+
 QMenuBar {
-	background: $menu-bg;
-	color: $menu-fg;
+	background: $menubar-bg;
+	color: $menubar-fg;
 	spacing: 5px;
-	
-	// TODO: This makes everything disappear :-(
+
+	// FIXME: This makes everything disappear :-(
 	//min-height: $control-size;
 	//max-height: $control-size;
 }
 
 QMenuBar:disabled {
-	background: $menu-bg-disabled;
-	color: $menu-fg-disabled;
+	background: $menubar-bg-disabled;
+	color: $menubar-fg-disabled;
 }
 
 QMenuBar::item {
 	$border: 1px;
 	$padding: 0px;
 	$size: $control-size - ($border + $padding) * 2;
-	
+
 	height: $size;
 	min-height: $size;
 	max-height: $size;
 	padding: $padding 10px;
 
-	background: $menu-bg;
-	border: $border solid $menu-bg;
-	color: $menu-fg;
+	background: $menubar-bg;
+	border: $border solid $menubar-bg;
+	color: $menubar-fg;
 }
 
 QMenuBar::item:selected {
-	background: $menu-bg-focus;
-	border-color: $menu-bg-focus;
-	color: $menu-fg-focus;
+	background: $menubar-bg-focus;
+	border-color: $menubar-bg-focus;
+	color: $menubar-fg-focus;
 }
 
 QMenuBar::item:pressed {
-	background: $menu-bg-active;
-	border-color: $menu-bg-active;
+	background: $menubar-bg-active;
+	border-color: $menubar-bg-active;
 	border-style: inset;
-	color: $menu-fg-active;
+	color: $menubar-fg-active;
 }
 
 QMenuBar::item:disabled {
-	background: $menu-bg-disabled;
-	border-color: $menu-bg-disabled;
-	color: $menu-fg-disabled;
+	background: $menubar-bg-disabled;
+	border-color: $menubar-bg-disabled;
+	color: $menubar-fg-disabled;
 }

@@ -1,0 +1,47 @@
+$sourcetoolbar-bg: hsl($primary-hue, $primary-sat, 100% / 8);
+
+
+* [themeID="addIconSmall"] {
+	qproperty-icon: url(./OceanBlue/plus.svg);
+}
+
+* [themeID="removeIconSmall"] {
+	qproperty-icon: url(./OceanBlue/minus.svg);
+}
+
+* [themeID="upArrowIconSmall"] {
+	qproperty-icon: url(./OceanBlue/arrow_up.svg);
+}
+
+* [themeID="downArrowIconSmall"] {
+	qproperty-icon: url(./OceanBlue/arrow_down.svg);
+}
+
+* [themeID="propertiesIconSmall"],
+* [themeID="configIconSmall"] {
+	qproperty-icon: url(./OceanBlue/gear.svg);
+}
+
+* [themeID="revertIcon"] {
+	qproperty-icon: url(./OceanBlue/undo.svg);
+}
+
+* [themeID="trashIcon"] {
+	qproperty-icon: url(./OceanBlue/trash.svg);
+}
+
+// --------------------------------------------------------------------------------
+// Scenes & Sources Toolbar
+// --------------------------------------------------------------------------------
+#scenesToolbar,
+#sourcesToolbar {
+	height: $control-size;
+	background-color: $sourcetoolbar-bg;
+}
+
+#scenesToolbar QAction,
+#sourcesToolbar QAction {
+	width: $control-size;
+	height: $control-size;
+
+}

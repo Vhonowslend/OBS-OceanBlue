@@ -1,4 +1,4 @@
-/* Ocean Blue 
+/* Ocean Blue
  * by Michael Fabian 'Xaymar' Dirks <info@xaymar.com>
  * https://xaymar.com/
 **/
@@ -9,10 +9,23 @@
 // - Some sort of view inside stats?
 // - statusbar
 
+/* Element Layers
+1. Absolute Background: QWindow, QDockWidget
+2. Passive Window Elements: QMenu, QStatusBar
+3. Grouping: QGroupBox, QListWidget, QTabWidget
+4. Controls: QLabel, QPushButton, QCheckBox, QRadioButton, ...
+
+
+**/
+
+// Mixins
+@use "sass:color";
+@use "util.scss";
+
 // Settings
 $control-border: 1px;
 $control-padding: 1px;
-$control-size: 20px;
+$control-size: 22px;
 $control-inner-size: $control-size - ($control-border + $control-padding) * 2;
 $scrollbar-size: 15px;
 $text-padding: 5px;
@@ -39,15 +52,6 @@ $header-bg-focus: hsl($primary-hue, $primary-sat, 30%);
 $header-fg: $fg;
 $header-fg-focus: $fg-highlight;
 
-$menu-bg: hsl($primary-hue, $primary-sat, 100% / 6);
-$menu-bg-focus: hsl($primary-hue, $primary-sat, 50%);
-$menu-bg-active: hsl($primary-hue, $primary-sat, 100% / 3);
-$menu-bg-disabled: hsl($primary-hue, 0%, 100% / 6);
-$menu-fg: $fg;
-$menu-fg-focus: $fg-highlight;
-$menu-fg-active: $fg;
-$menu-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
-
 $control-bg: hsl($primary-hue, $primary-sat, 30%);
 $control-bg-focus: hsl($primary-hue, $primary-sat, 50%);
 $control-bg-active: hsl($primary-hue, $primary-sat, 40%);
@@ -56,16 +60,6 @@ $control-fg: $fg;
 $control-fg-focus: $fg-highlight;
 $control-fg-active: $fg;
 $control-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
-
-$group-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
-$group-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
-$group-bg-title: $control-bg;
-$group-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
-$group-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
-$group-bd-title: $control-bg-focus;
-$group-fg: $control-fg;
-$group-fg-disabled: $control-fg-disabled;
-$group-fg-title: $control-fg;
 
 // Images
 $image-zero: url(./OceanBlue/zero.svg);
@@ -106,6 +100,7 @@ $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 
 // Import critical parts
 @import "oceanblue-defaults.scss";
+@import "oceanblue-qwidget.scss";
 @import "oceanblue-qwindow.scss";
 
 // Containers
@@ -119,6 +114,7 @@ $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 @import "oceanblue-qmenubar.scss";
 @import "oceanblue-qscrollbar.scss";
 @import "oceanblue-qsplitter.scss";
+@import "oceanblue-qstatusbar.scss";
 
 // Controls
 @import "oceanblue-qcheckbox.scss";
@@ -131,6 +127,10 @@ $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 
 // Import OBS Styles
 @import "oceanblue-obstheme.scss";
-@import "oceanblue-obsbasicsettings.scss";
+@import "oceanblue-obsextra.scss";
+@import "oceanblue-obsbasicadvaudio.scss";
+@import "oceanblue-obsbasicsettings.scss"; // OBS Settings Window
+@import "oceanblue-obsdocks.scss";
+@import "oceanblue-obshotkeyedit.scss";
 @import "oceanblue-obsqtdisplay.scss";
 @import "oceanblue-obspropertiesview.scss";

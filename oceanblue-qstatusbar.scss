@@ -1,0 +1,10 @@
+$statusbar-bg: hsl($primary-hue, $primary-sat, 100% / 8);
+$statusbar-item-bg: transparent;
+
+QStatusBar {
+	background-color: $statusbar-bg;
+}
+
+QStatusBar::item {
+	background-color: $statusbar-item-bg;
+}

@@ -21,8 +21,8 @@ QCheckBox::indicator {
 	border: $border solid $control-bg;
 	padding: $padding;
 
-	width: $size;
-	height: $size;
+	width: $size - 5;
+	height: $size - 5;
 }
 
 QCheckBox::indicator:hover,
@@ -52,4 +52,97 @@ QCheckBox::indicator:unchecked {
 
 QCheckBox::indicator:checked  {
 	image: $image-checkmark-on;
+}
+
+// --------------------------------------------------------------------------------
+// Custom
+// --------------------------------------------------------------------------------
+
+VisibilityCheckBox,
+LockedCheckBox,
+MuteCheckBox {
+	width: $control-size;
+	height: $control-size;
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid transparent;
+}
+
+VisibilityCheckBox::indicator,
+LockedCheckBox::indicator,
+MuteCheckBox::indicator {
+	// For unknown reasons, the parent item has 1px padding and border.
+	width: $control-size - 4px;
+	height: $control-size - 4px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid transparent;
+	background: transparent;
+}
+
+// --------------------------------------------------------------------------------
+// Locked CheckBox
+// --------------------------------------------------------------------------------
+
+LockedCheckBox::indicator:checked {
+	image: $image-lock-closed;
+}
+
+LockedCheckBox::indicator:unchecked {
+	image: $image-lock-open;
+}
+
+// --------------------------------------------------------------------------------
+// Muted CheckBox
+// --------------------------------------------------------------------------------
+
+MuteCheckBox::indicator:checked {
+	image: $image-audio-muted;
+}
+
+MuteCheckBox::indicator:unchecked {
+	image: $image-audio-unmuted;
+}
+
+// --------------------------------------------------------------------------------
+// Source Tree Sub-Item CheckBox
+// --------------------------------------------------------------------------------
+
+SourceTreeSubItemCheckBox {
+	width: $control-size;
+	height: $control-size;
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid transparent;
+	background: transparent;
+}
+
+SourceTreeSubItemCheckBox::indicator {
+	// For unknown reasons, the parent item has 1px padding and border.
+	width: 8px;
+	height: $control-size;
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid transparent;
+	background: transparent;
+}
+
+SourceTreeSubItemCheckBox::indicator:checked {
+	image: $image-arrow-down;
+}
+
+SourceTreeSubItemCheckBox::indicator:unchecked {
+	image: $image-arrow-right;
+}
+
+// --------------------------------------------------------------------------------
+// Visibility CheckBox
+// --------------------------------------------------------------------------------
+
+VisibilityCheckBox::indicator:checked {
+	image: $image-eye-open;
+}
+
+VisibilityCheckBox::indicator:unchecked {
+	image: $image-eye-closed;
 }

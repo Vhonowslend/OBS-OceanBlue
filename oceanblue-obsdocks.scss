@@ -1,0 +1,25 @@
+// Docks:
+// - Sources
+// - Scenes
+// -
+
+/*OBSDock > QWidget {
+	background-color: $group-bg;
+	border-color: $group-bd;
+	color: $group-fg;
+}*/
+
+// Statistics
+OBSBasicStats {
+	background-color: $window-bg;
+	color: $window-fg;
+}
+
+OBSBasicStats:disabled {
+	background-color: $window-bg-disabled;
+	color: $window-fg-disabled;
+}
+
+// Mixer Dock is:
+// QDockWidget(OBSDock) > QWidget > QStackedWidget > ...(splits into two here)
+// A:

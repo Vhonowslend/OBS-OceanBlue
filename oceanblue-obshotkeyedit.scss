@@ -1,0 +1,26 @@
+QPushButton[themeID="revertIcon"],
+QPushButton[themeID="trashIcon"],
+QPushButton[themeID="addIconSmall"],
+QPushButton[themeID="removeIconSmall"] {
+	$border: 1px;
+	$padding: 1px;
+	$size: $control-size - ($border + $padding) * 2;
+
+	//min-width: $size;
+	height: $size;
+	min-height: $size;
+	max-height: $size;
+	width: $size;
+	min-width: $size;
+	max-width: $size;
+	padding: $padding $text-padding;
+	border-width: 1px;
+	border-style: solid;
+}
+
+QPushButton[themeID="revertIcon"]:flat:disabled,
+QPushButton[themeID="trashIcon"]:flat:disabled,
+QPushButton[themeID="addIconSmall"]:flat:disabled,
+QPushButton[themeID="removeIconSmall"]:flat:disabled {
+	qproperty-palette: rgb(0, 0, 0, 0);
+}

@@ -3,11 +3,11 @@ QPushButton {
 	$padding: 1px;
 	$size: $control-size - ($border + $padding) * 2;
 
-	//min-width: $size;
+	//min-width: $size * 2;
 	height: $size;
 	padding: $padding $text-padding;
+	background-color: $control-bg;
 	border: 1px solid $control-bg;
-	background-color: $control-bg;	
 	color: $control-fg;
 
 	// TODO: border-radius?
@@ -20,9 +20,8 @@ QPushButton:checked {
 }
 
 QPushButton:flat {
-	// TODO: Figure out what differentiates flat from non-flat.
-	border-color: transparent;
 	background-color: transparent;
+	border-color: transparent;
 }
 
 QPushButton:hover,
@@ -43,4 +42,9 @@ QPushButton:disabled {
 	background-color: $control-bg-disabled;
 	border-color: $control-bg-disabled;
 	color: $control-fg-disabled;
+}
+
+QPushButton:flat:disabled {
+	background-color: transparent;
+	border-color: transparent;
 }

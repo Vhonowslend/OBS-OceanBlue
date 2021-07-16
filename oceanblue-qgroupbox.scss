@@ -1,15 +1,25 @@
+$groupbox-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
+$groupbox-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
+$groupbox-fg: $control-fg;
+$groupbox-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
+$groupbox-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
+$groupbox-fg-disabled: $control-fg-disabled;
+$groupbox-title-bg: hsl($primary-hue, $primary-sat, 100% / 3);
+$groupbox-title-bd: hsl($primary-hue, $primary-sat, 100% / 6);
+$groupbox-title-fg: $control-fg;
+
 QGroupBox {
 	$padding: 1px;
 	$border: 1px;
-	
+
 	padding: $padding;
 	padding-top: $control-size / 4 * 3;
 	margin-top: $control-size / 4;
 
-	border: $border solid $group-bd;
+	border: $border solid $groupbox-bd;
 	border-radius: 1px; // TODO: Configurable
-	background-color: $group-bg;
-	color: $group-fg;
+	background-color: $groupbox-bg;
+	color: $groupbox-fg;
 }
 
 QGroupBox::title {
@@ -18,19 +28,19 @@ QGroupBox::title {
 	$size: $control-size - ($padding + $border) * 2;
 
 	left: $control-size / 2;
-	top: -$control-size / 4;
+	top: -$size / 4;
 	height: $size;
 	padding: $padding $text-padding;
-	border: 1px solid $group-bd-title;
-	border-radius: 1px;	
-	background-color: $group-bg-title;
-	color: $group-fg-title;
+	border: 1px solid $groupbox-title-bd;
+	border-radius: 1px;
+	background-color: $groupbox-title-bg;
+	color: $groupbox-title-fg;
 }
 
 QGroupBox:disabled {
-	background-color: $group-bg-disabled;
-	border-color: $group-bd-disabled;
-	color: $group-fg-disabled;
+	background-color: $groupbox-bg-disabled;
+	border-color: $groupbox-bd-disabled;
+	color: $groupbox-fg-disabled;
 }
 
 QGroupBox::indicator { // TODO: Actually see how this looks.
