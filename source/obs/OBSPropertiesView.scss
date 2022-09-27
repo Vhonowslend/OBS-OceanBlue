@@ -1,11 +1,11 @@
-$obspropertiesview-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
-$obspropertiesview-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
+$obspropertiesview-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 6));
+$obspropertiesview-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
 $obspropertiesview-fg: $control-fg;
-$obspropertiesview-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
-$obspropertiesview-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
+$obspropertiesview-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, math.div(100%, 6));
+$obspropertiesview-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, math.div(100%, 3));
 $obspropertiesview-fg-disabled: $control-fg-disabled;
-$obspropertiesview-title-bg: hsl($primary-hue, $primary-sat, 100% / 3);
-$obspropertiesview-title-bd: hsl($primary-hue, $primary-sat, 100% / 6);
+$obspropertiesview-title-bg: hsl($primary-hue, $primary-sat, math.div(100%, 3));
+$obspropertiesview-title-bd: hsl($primary-hue, $primary-sat, math.div(100%, 6));
 $obspropertiesview-title-fg: $control-fg;
 
 OBSPropertiesView {

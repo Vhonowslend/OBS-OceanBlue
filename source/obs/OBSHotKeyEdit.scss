@@ -4,7 +4,7 @@ QPushButton[themeID="addIconSmall"],
 QPushButton[themeID="removeIconSmall"] {
 	$border: 1px;
 	$padding: 1px;
-	$size: $control-size - ($border + $padding) * 2;
+	$size: $control-size - ((($border + $padding)) * 2);
 
 	//min-width: $size;
 	height: $size;

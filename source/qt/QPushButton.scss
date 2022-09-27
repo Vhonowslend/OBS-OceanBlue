@@ -1,7 +1,7 @@
 QPushButton {
 	$border: 1px;
 	$padding: 1px;
-	$size: $control-size - ($border + $padding) * 2;
+	$size: $control-size - (($border + $padding) * 2);
 
 	//min-width: $size * 2;
 	height: $size;

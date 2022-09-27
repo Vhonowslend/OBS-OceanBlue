@@ -4,13 +4,15 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Compile",
+			"label": "Build",
 			"type": "shell",
-			"command": "sass --no-charset oceanblue.scss build/OceanBlue.qss",
-			"problemMatcher": [],
+			"command": "${workspaceFolder}/scripts/build.ps1",
 			"group": {
 				"kind": "build",
 				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
 			}
 		}
 	]

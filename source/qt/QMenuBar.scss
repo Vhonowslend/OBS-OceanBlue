@@ -1,11 +1,11 @@
-$menubar-bg: hsl($primary-hue, $primary-sat, 100% / 8);
+$menubar-bg: hsl($primary-hue, $primary-sat, math.div(100%, 8));
 $menubar-bg-focus: hsl($primary-hue, $primary-sat, 50%);
-$menubar-bg-active: hsl($primary-hue, $primary-sat, 100% / 3);
-$menubar-bg-disabled: hsl($primary-hue, 0%, 100% / 6);
+$menubar-bg-active: hsl($primary-hue, $primary-sat, math.div(100%, 3));
+$menubar-bg-disabled: hsl($primary-hue, 0%, math.div(100%, 6));
 $menubar-fg: $fg;
 $menubar-fg-focus: $fg-highlight;
 $menubar-fg-active: $fg;
-$menubar-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+$menubar-fg-disabled: hsl($tertiary-hue, $tertiary-sat, ((math.div(100%, 3)) * 2));
 
 QMenuBar {
 	background: $menubar-bg;
@@ -25,7 +25,7 @@ QMenuBar:disabled {
 QMenuBar::item {
 	$border: 1px;
 	$padding: 0px;
-	$size: $control-size - ($border + $padding) * 2;
+	$size: $control-size - (($border + $padding) * 2);
 
 	height: $size;
 	min-height: $size;

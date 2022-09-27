@@ -1,6 +1,6 @@
 // Also contains QDoubleSpinBox (same element, just with float)
 
-$qtspinbox-button-size: ($control-size / 2) - ($control-border + $control-padding) * 2;	
+$qtspinbox-button-size: math.div($control-size, 2) - ((($control-border + $control-padding)) * 2);	
 
 QSpinBox,
 QDoubleSpinBox {	

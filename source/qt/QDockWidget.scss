@@ -1,8 +1,8 @@
-$dockwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
-$dockwidget-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
+$dockwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 6));
+$dockwidget-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
 $dockwidget-fg: $control-fg;
-$dockwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
-$dockwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
+$dockwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, math.div(100%, 6));
+$dockwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, math.div(100%, 3));
 $dockwidget-fg-disabled: $control-fg-disabled;
 $dockwidget-title-bg: hsl($primary-hue, $primary-sat, 45%);
 $dockwidget-title-bd: transparent;

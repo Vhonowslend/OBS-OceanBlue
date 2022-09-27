@@ -1,8 +1,8 @@
-$listwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, 100% / 6);
-$listwidget-bd: hsla($primary-hue, $primary-sat, 75%, 100% / 3);
+$listwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 6));
+$listwidget-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
 $listwidget-fg: $control-fg;
-$listwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, 100% / 6);
-$listwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, 100% / 3);
+$listwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, math.div(100%, 6));
+$listwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, math.div(100%, 3));
 $listwidget-fg-disabled: $control-fg-disabled;
 $listwidget-title-bg: hsl($primary-hue, $primary-sat * 0.8, 75%);
 $listwidget-title-bd: hsl($primary-hue, $primary-sat, 50%);

@@ -1,4 +1,4 @@
-$qscrollbar-button-size: $scrollbar-size - ($control-padding + $control-border) * 2;
+$qscrollbar-button-size: $scrollbar-size - (($control-padding + $control-border) * 2);
 
 QScrollBar {
 	margin: 0px;
@@ -115,11 +115,11 @@ QScrollBar::handle:disabled {
 
 QScrollBar::handle:vertical {
 	min-height: $qscrollbar-button-size;
-	width: $scrollbar-size - ($control-border + $control-padding) * 2;
+	width: $scrollbar-size - (($control-border + $control-padding) * 2);
 }
 QScrollBar::handle:horizontal {
 	min-width: $qscrollbar-button-size;
-	height: $scrollbar-size - ($control-border + $control-padding) * 2;
+	height: $scrollbar-size - (($control-border + $control-padding) * 2);
 }
 
 QScrollBar::add-page,

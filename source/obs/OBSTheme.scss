@@ -1,17 +1,8 @@
 @use "util.scss";
 
-$test0: "rgb(255, 0, 0)";
-$test1: "rgb(255, 128, 0)";
-$test2: "rgb(255, 255, 0)";
-$test3: "rgb(128, 255, 0)";
-$test4: "rgb(0, 255, 0)";
-$test5: "rgb(0, 255, 128)";
-$test6: "rgb(0, 255, 255)";
-$test7: "rgb(0, 128, 255)";
-$test8: "rgb(0, 0, 255)";
-$test9: "rgb(128, 0, 255)";
-$test10: "rgb(255, 0, 255)";
+$test0: "rgb(255, 0, 255)";
 
+// sass-lint:disable unknownProperties, emptyRules
 OBSTheme {
 	// - alternateBase
 	// - base
@@ -33,41 +24,41 @@ OBSTheme {
 	// - windowText, windowForeground
 	// - window, background
 	// - placeholderText
-
+	
 	base: unquote($test0);
-	alternateBase: unquote($test1);
+	alternateBase: unquote($test0);
 
 	// Affects
 	// - Hotkey Buttons (disabled, enabled)
-	window: unquote($test10);
+	window: unquote($test0);
 
 	// Affects
 	// - QLabel
 	windowText: $fg;
 
-	button: unquote($test3);
+	button: unquote($test0);
 	buttonText: $fg;
 
 	text: $fg;
-	brightText: $fg-highlight;
+	brightText: $fg-light;
 	highlightText: $fg-highlight;
 
-	link: unquote($test4);
-	linkVisited: unquote($test5);
+	link: unquote($test0);
+	linkVisited: unquote($test0);
 
 	// shadow affects:
 	// - QScrollBar (bottom & right border)
-	shadow: unquote($test6);
+	shadow: unquote($test0);
 
-	dark: unquote($test7);
+	dark: unquote($test0);
 
-	mid: unquote($test8);
+	mid: unquote($test0);
 
 	midlight: $control-bg-active;
 
 	// light affects:
 	// - QScrollBar (top & left border)
-	light: unquote($test9);
+	light: unquote($test0);
 
 	highlight: $control-bg-focus;
 }
@@ -84,3 +75,4 @@ OBSTheme:active {
 OBSTheme:inactive {
 
 }
+// sass-lint:enable emptyRules, unknownProperties

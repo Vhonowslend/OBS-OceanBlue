@@ -10,15 +10,14 @@
 // - statusbar
 
 /* Element Layers
-1. Absolute Background: QWindow, QDockWidget
-2. Passive Window Elements: QMenu, QStatusBar
-3. Grouping: QGroupBox, QListWidget, QTabWidget
-4. Controls: QLabel, QPushButton, QCheckBox, QRadioButton, ...
-
-
+ * 1. Absolute Background: QWindow, QDockWidget
+ * 2. Passive Window Elements: QMenu, QStatusBar
+ * 3. Grouping: QGroupBox, QListWidget, QTabWidget
+ * 4. Controls: QLabel, QPushButton, QCheckBox, QRadioButton, ...
 **/
 
 // Mixins
+@use 'sass:math';
 @use "sass:color";
 @use "util.scss";
 
@@ -26,10 +25,10 @@
 $control-border: 1px;
 $control-padding: 1px;
 $control-size: 22px;
-$control-inner-size: $control-size - ($control-border + $control-padding) * 2;
+$control-inner-size: $control-size - ((($control-border + $control-padding)) * 2);
 $scrollbar-size: 15px;
 $text-padding: 5px;
-$font-default-face: "Open Sans", "Roboto", sans-serif;
+$font-default-face: "Open Sans", "Roboto", "Malgun Gothic", sans-serif;
 $font-default-size: 12px;
 
 // Palette
@@ -40,12 +39,13 @@ $secondary-sat: 100%;
 $tertiary-hue: 0;
 $tertiary-sat: 0%;
 $fg: hsl($tertiary-hue, $tertiary-sat, 95%);
+$fg-light: hsl($tertiary-hue, $tertiary-sat, 98%);
 $fg-highlight: hsl($tertiary-hue, $tertiary-sat, 100%);
 
 $window-bg: hsl($primary-hue, $primary-sat, 5%);
-$window-bg-disabled: hsl($primary-hue, $primary-sat * 0.5, 10%);
+$window-bg-disabled: hsl($primary-hue, math.div($primary-sat, 2), 10%);
 $window-fg: $fg;
-$window-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+$window-fg-disabled: hsl($tertiary-hue, $tertiary-sat, ((math.div(100%, 3)) * 2));
 
 $header-bg: hsl($primary-hue, $primary-sat, 20%);
 $header-bg-focus: hsl($primary-hue, $primary-sat, 30%);
@@ -59,7 +59,7 @@ $control-bg-disabled: hsl($primary-hue, $primary-sat * 0.5, 20%);
 $control-fg: $fg;
 $control-fg-focus: $fg-highlight;
 $control-fg-active: $fg;
-$control-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+$control-fg-disabled: hsl($tertiary-hue, $tertiary-sat, ((math.div(100%, 3)) * 2));
 
 // Images
 $image-zero: url(./OceanBlue/zero.svg);
@@ -98,39 +98,36 @@ $image-settings-audio: url(./OceanBlue/settings_audio.svg);
 $image-settings-hotkeys: url(./OceanBlue/settings_hotkeys.svg);
 $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 
-// Import critical parts
-@import "oceanblue-defaults.scss";
-@import "oceanblue-qwidget.scss";
-@import "oceanblue-qwindow.scss";
-
+// Qt
+@import "qt/defaults.scss";
 // Containers
-@import "oceanblue-qdockwidget.scss";
-@import "oceanblue-qgroupbox.scss";
-@import "oceanblue-qtabwidget.scss";
-@import "oceanblue-qlistwidget.scss";
-
+@import "qt/QWidget.scss";
+@import "qt/QWindow.scss";
+@import "qt/QDockWidget.scss";
+@import "qt/QGroupBox.scss";
+@import "qt/QTabWidget.scss";
+@import "qt/QListWidget.scss";
 // Passive Controls
-@import "oceanblue-qmenu.scss";
-@import "oceanblue-qmenubar.scss";
-@import "oceanblue-qscrollbar.scss";
-@import "oceanblue-qsplitter.scss";
-@import "oceanblue-qstatusbar.scss";
+@import "qt/QMenu.scss";
+@import "qt/QMenuBar.scss";
+@import "qt/QScrollBar.scss";
+@import "qt/QSplitter.scss";
+@import "qt/QStatusBar.scss";
+// Active Controls
+@import "qt/QCheckBox.scss";
+@import "qt/QComboBox.scss";
+@import "qt/QLineEdit.scss";
+@import "qt/QPushButton.scss";
+@import "qt/QRadioButton.scss";
+@import "qt/QSlider.scss";
+@import "qt/QSpinBox.scss";
 
-// Controls
-@import "oceanblue-qcheckbox.scss";
-@import "oceanblue-qcombobox.scss";
-@import "oceanblue-qlineedit.scss";
-@import "oceanblue-qpushbutton.scss";
-@import "oceanblue-qradiobutton.scss";
-@import "oceanblue-qslider.scss";
-@import "oceanblue-qspinbox.scss";
-
-// Import OBS Styles
-@import "oceanblue-obstheme.scss";
-@import "oceanblue-obsextra.scss";
-@import "oceanblue-obsbasicadvaudio.scss";
-@import "oceanblue-obsbasicsettings.scss"; // OBS Settings Window
-@import "oceanblue-obsdocks.scss";
-@import "oceanblue-obshotkeyedit.scss";
-@import "oceanblue-obsqtdisplay.scss";
-@import "oceanblue-obspropertiesview.scss";
+// OBS
+@import "obs/obstheme.scss";
+@import "obs/obsextra.scss";
+@import "obs/obsdocks.scss";
+@import "obs/OBSBasicAdvAudio.scss";
+@import "obs/OBSBasicSettings.scss";
+@import "obs/OBSHotKeyEdit.scss";
+@import "obs/OBSQtDisplay.scss";
+@import "obs/OBSPropertiesView.scss";

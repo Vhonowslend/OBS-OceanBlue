@@ -1,12 +1,12 @@
-$menu-bg: hsl($primary-hue, $primary-sat, 100% / 6);
+$menu-bg: hsl($primary-hue, $primary-sat, math.div(100%, 6));
 $menu-fg: $fg;
 $menu-item-bg: transparent;
 $menu-item-bd: transparent;
 $menu-item-fg: $control-fg;
 $menu-item-bg-focus: hsl($primary-hue, $primary-sat, 50%);
 $menu-item-fg-focus: $control-fg-focus;
-$menu-item-bg-disabled: hsl($primary-hue, 50%, 100% / 6);
-$menu-item-fg-disabled: hsl($tertiary-hue, $tertiary-sat, 100% / 3 * 2);
+$menu-item-bg-disabled: hsl($primary-hue, 50%, math.div(100%, 6));
+$menu-item-fg-disabled: hsl($tertiary-hue, $tertiary-sat, math.div(100%, 3) * 2);
 
 QMenu {
 	background: $menu-bg;

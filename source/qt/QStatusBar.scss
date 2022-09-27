@@ -1,4 +1,4 @@
-$statusbar-bg: hsl($primary-hue, $primary-sat, 100% / 8);
+$statusbar-bg: hsl($primary-hue, $primary-sat, math.div(100%, 8));
 $statusbar-item-bg: transparent;
 
 QStatusBar {

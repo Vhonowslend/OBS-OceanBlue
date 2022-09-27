@@ -1,4 +1,4 @@
-$sourcetoolbar-bg: hsl($primary-hue, $primary-sat, 100% / 6);
+$sourcetoolbar-bg: hsl($primary-hue, $primary-sat, math.div(100%, 6));
 
 * [themeID="addIconSmall"] {
 	qproperty-icon: url(./OceanBlue/plus.svg);
