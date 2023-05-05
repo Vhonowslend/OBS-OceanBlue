@@ -2,3 +2,4 @@
 *.map
 /*.qss
 /build
+/node_modules
