@@ -8,10 +8,23 @@
 ![Settings -> Output](https://cdn.xaymar.com/share/2021-07-16/obs64_rjS06QgK8v.png)
 ![Filters](https://cdn.xaymar.com/share/2021-07-16/obs64_cg3MaGg6jY.png)
 
-## Installation
-### Windows
-1. Download the [latest Version](https://github.com/Xaymar/obs-oceanblue/releases/latest).
-2. Find where OBS Studio is installed (it may be in the default location `C:\Program Files\obs-studio`).
-    * Close OBS Studio if it is running.
-3. Unzip the downloaded archive into `<obs studio>/data/obs-studio/themes`.
-4. Open OBS Studio and in the Settings window change the theme to Ocean Blue.
+# Helpful Guides
+## Installing
+1. Download the theme version matching your OBS Studio version from [here](https://github.com/Xaymar/obs-OceanBlue/releases).
+2. Extract the archive **into** the following location(s):
+    - On *Windows*: `%AppData%/obs-studio/themes/`
+    - On *Linux*: `${HOME}/.config/obs-studio/themes/`
+    - On *MacOS*: `~/Library/Application Support/obs-studio/themes/`
+3. Restart OBS Studio.
+4. ???
+5. Profit!
+
+## Uninstalling
+1. Stop OBS Studio.
+2. Remove the matching theme files from the following location(s):
+    - On *Windows*: `%AppData%/obs-studio/themes/`
+    - On *Linux*: `${HOME}/.config/obs-studio/themes/`
+    - On *MacOS*: `~/Library/Application Support/obs-studio/themes/`
+3. Start OBS Studio.
+4. ???
+5. Profit.
