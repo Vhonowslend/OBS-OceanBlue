@@ -12,7 +12,7 @@ QRadioButton::indicator {
 	border: 1px solid $control-bg;
 	background-color: $control-bg;
 	color: $control-fg;
-	border-radius: $control-size / 2;
+	border-radius: math.div($control-size, 2);
 }
 
 QRadioButton::indicator:hover,
@@ -40,6 +40,6 @@ QRadioButton::indicator:unchecked {
 }
 
 QRadioButton::indicator:checked {
-	image: url(./OceanBlue/dot.svg);
+	image: url('./OceanBlue/dot.svg');
 	border-style: outset;
 }

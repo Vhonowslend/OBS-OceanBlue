@@ -1,0 +1,13 @@
+{
+  "name": "obs-oceanblue",
+  "version": "1.0.0",
+  "description": "A dark mode skin for OBS Studio",
+  "author": "Michael Fabian 'Xaymar' Dirks <info@xaymar.com>",
+  "license": "BSD 3-Clause",
+  "scripts": {
+    "build": "node ./scripts/install.js"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
+  }
+}

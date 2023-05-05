@@ -1,5 +1,5 @@
 $qslider-groove-size: 4px;
-$qslider-handle-size: $control-size / 2;
+$qslider-handle-size: math.div($control-size, 2);
 $qslider-handle-size-inner: $qslider-handle-size - (($control-padding + $control-border) * 2);
 $qslider-offset: math.div($control-size - $qslider-groove-size, 2);
 

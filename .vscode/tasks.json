@@ -6,7 +6,7 @@
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "${workspaceFolder}/scripts/build.ps1",
+			"command": "npm run build",
 			"group": {
 				"kind": "build",
 				"isDefault": true

@@ -1,10 +1,10 @@
-$tabwidget-bg: hsla($primary-hue, (($primary-sat, 0.8), 50%, math.div(100%) * 6));
+$tabwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 6));
 $tabwidget-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
 $tabwidget-fg: $control-fg;
-$tabwidget-bg-disabled: hsla($primary-hue, math.div($primary-sat, 2), 50%, math.div(100%, 6));
-$tabwidget-bd-disabled: hsla($primary-hue, math.div($primary-sat, 2), 75%, math.div(100%, 3));
+$tabwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, math.div(100%, 6));
+$tabwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, math.div(100%, 3));
 $tabwidget-fg-disabled: $control-fg-disabled;
-$tabwidget-title-bg: hsl($primary-hue, (($primary-sat, 0.8)) * (75%));
+$tabwidget-title-bg: hsl($primary-hue, $primary-sat * 0.8, 75%);
 $tabwidget-title-bd: hsl($primary-hue, $primary-sat, 50%);
 $tabwidget-title-fg: $control-fg;
 
@@ -28,9 +28,9 @@ QTabBar::tab {
 	height: $control-inner-size;
 	border: $control-border solid $tabwidget-bd;
 	background: $tabwidget-bg;
-	border-top-left-radius: (($control-border) * 3);
-	border-top-right-radius: (($control-border) * 3);
-	margin-right: (($control-border) * 3);
+	border-top-left-radius: $control-border * 3;
+	border-top-right-radius: $control-border * 3;
+	margin-right: $control-border * 3;
 }
 
 QTabBar::tab:hover {

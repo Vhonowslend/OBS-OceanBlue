@@ -1,8 +1,8 @@
 $groupbox-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 8));
 $groupbox-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
 $groupbox-fg: $control-fg;
-$groupbox-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, math.div(100%, 6));
-$groupbox-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, math.div(100%, 3));
+$groupbox-bg-disabled: hsla($primary-hue, math.div($primary-sat, 2), 50%, math.div(100%, 6));
+$groupbox-bd-disabled: hsla($primary-hue, math.div($primary-sat, 2), 75%, math.div(100%, 3));
 $groupbox-fg-disabled: $control-fg-disabled;
 $groupbox-title-bg: hsl($primary-hue, $primary-sat, math.div(100%, 3));
 $groupbox-title-bd: hsl($primary-hue, $primary-sat, math.div(100%, 6));
@@ -13,8 +13,8 @@ QGroupBox {
 	$border: 1px;
 
 	padding: $padding;
-	padding-top: $control-size / 4 * 3;
-	margin-top: $control-size / 4;
+	padding-top: $control-size * 0.25 * 3;
+	margin-top: $control-size * 0.25;
 
 	border: $border solid $groupbox-bd;
 	border-radius: 1px; // TODO: Configurable
@@ -27,8 +27,8 @@ QGroupBox::title {
 	$border: 1px;
 	$size: $control-size - ($padding + $border) * 2;
 
-	left: $control-size / 2;
-	top: -$size / 4;
+	left: $control-size * 0.5;
+	top: -$size * 0.25;
 	height: $size;
 	padding: $padding $text-padding;
 	border: 1px solid $groupbox-title-bd;

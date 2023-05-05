@@ -79,8 +79,8 @@ QMenu::indicator:exclusive:checked:selected {
 
 QMenu::left-arrow,
 QMenu::right-arrow {
-	width: $control-size / 2;
-	height: $control-size / 2;
+	width: $control-size * 0.5;
+	height: $control-size * 0.5;
 }
 
 QMenu::left-arrow {

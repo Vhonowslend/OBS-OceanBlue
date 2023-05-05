@@ -5,7 +5,7 @@ $menubar-bg-disabled: hsl($primary-hue, 0%, math.div(100%, 6));
 $menubar-fg: $fg;
 $menubar-fg-focus: $fg-highlight;
 $menubar-fg-active: $fg;
-$menubar-fg-disabled: hsl($tertiary-hue, $tertiary-sat, ((math.div(100%, 3)) * 2));
+$menubar-fg-disabled: hsl($tertiary-hue, $tertiary-sat, (math.div(100%, 3) * 2));
 
 QMenuBar {
 	background: $menubar-bg;

@@ -1,4 +1,5 @@
-@use "util.scss";
+@use "sass:string";
+@use "../util.scss";
 
 $test0: "rgb(255, 0, 255)";
 
@@ -25,40 +26,40 @@ OBSTheme {
 	// - window, background
 	// - placeholderText
 	
-	base: unquote($test0);
-	alternateBase: unquote($test0);
+	base: string.unquote($test0);
+	alternateBase: string.unquote($test0);
 
 	// Affects
 	// - Hotkey Buttons (disabled, enabled)
-	window: unquote($test0);
+	window: string.unquote($test0);
 
 	// Affects
 	// - QLabel
 	windowText: $fg;
 
-	button: unquote($test0);
+	button: string.unquote($test0);
 	buttonText: $fg;
 
 	text: $fg;
 	brightText: $fg-light;
 	highlightText: $fg-highlight;
 
-	link: unquote($test0);
-	linkVisited: unquote($test0);
+	link: string.unquote($test0);
+	linkVisited: string.unquote($test0);
 
 	// shadow affects:
 	// - QScrollBar (bottom & right border)
-	shadow: unquote($test0);
+	shadow: string.unquote($test0);
 
-	dark: unquote($test0);
+	dark: string.unquote($test0);
 
-	mid: unquote($test0);
+	mid: string.unquote($test0);
 
 	midlight: $control-bg-active;
 
 	// light affects:
 	// - QScrollBar (top & left border)
-	light: unquote($test0);
+	light: string.unquote($test0);
 
 	highlight: $control-bg-focus;
 }
