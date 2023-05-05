@@ -1,5 +1,45 @@
 @use "sass:color";
+@use "sass:list";
+@use "sass:math";
 
 @function asRGB($anycolor) {
 	@return "rgb(" + color.red($anycolor)+ ", " + color.green($anycolor) + ", " + color.blue($anycolor) + ")";
+};
+
+@function yuv709($y, $u, $v) {
+	@return rgb(
+		($y + $v * 1.57480) * 255,
+		($y + $u * -0.18732 + $v * -0.46812) * 255,
+		($y + $u * 1.85560) * 255
+	);
+};
+
+// Convert from YUV709 to RGB
+@function fromYUV709($yuv) {
+	$y: list.nth($yuv, 1);
+	$u: list.nth($yuv, 2);
+	$v: list.nth($yuv, 3);
+	$r: $y + $v * 1.57480;
+	$g: $y + $u * -0.18732 + $v * -0.46812;
+	$b: $y + $u * 1.85560;
+	@return rgb($r * 255, $g * 255, $b * 255);
+}
+
+// Convert from RGB to YUV709
+@function toYUV709($anycolor) {
+	$r: math.div(color.red($anycolor), 255);
+	$g: math.div(color.green($anycolor), 255);
+	$b: math.div(color.blue($anycolor), 255);
+	$y: ($r * 0.21260 + $g * 0.71520 + $b * 0.07220);
+	$u: ($r * -0.11457 + $g * -0.38543 + $b * 0.5);
+	$v: ($r * 0.5 + $g * -0.45415 + $b * -0.04585);
+	@return $y, $u, $v;
+}
+
+// Modify brightness and saturation.
+@function yuv709cc($anycolor, $brightness, $saturation) {
+	$saturation: $saturation * math.sin(math.clamp($brightness * math.$pi * .5, 0, 1));
+	$yuv: toYUV709($anycolor);
+	$yuv: list.nth($yuv, 1) * $brightness, list.nth($yuv, 2) * $saturation, list.nth($yuv, 3) * $saturation;
+	@return fromYUV709($yuv);
 }

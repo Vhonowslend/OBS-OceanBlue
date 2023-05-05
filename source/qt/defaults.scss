@@ -1,56 +1,6 @@
-// This file ensures that everything is restored to a reasonable value.
-// Per-element skinning should happen _after_ including this file.
+// This file sets up some defaults applied to every element.
 
-/*
-QAbstractScrollArea,
-QCheckBox, QCheckBox::indicator,
-QColumnView, QColumnView::left-arrow, QColumnView::right-arrow,
-QComboBox, QComboBox::drop-down, QComboBox::down-arrow,
-QDateEdit, QDateEdit::up-button, QDateEdit::up-arrow, QDateEdit::down-button, QDateEdit::down-arrow,
-QDateTimeEdit, QDateTimeEdit::up-button, QDateTimeEdit::up-arrow, QDateTimeEdit::down-button, QDateTimeEdit::down-arrow,
-QDialog,
-QDialogButtonBox,
-QDockWidget, QDockWidget::title, QDockWidget::close-button, QDockWidget::float-button,
-QDoubleSpinBox, QDoubleSpinBox::up-button, QDoubleSpinBox::up-arrow, QDoubleSpinBox::down-button, QDoubleSpinBox::down-arrow,
-QFrame,
-QGroupBox, QGroupBox::title, QGroupBox::indicator,
-QHeaderView, QHeaderView::section, QHeaderView::up-arrow, QHeaderView::down-arrow,
-QLabel,
-QLineEdit,
-QListView, QListView::item,
-QListWidget, QListWidget::item,
-QMainWindow, QMainWindow::separator,
-// These break styling. Don't ask me how, I have no idea.
-//QMenu, QMenu::item, QMenu::item::indicator, QMenu::separator, QMenu::left-arrow, QMenu::right-arrow, QMenu::scroller, QMenu::tearoff,
-//QMenuBar, QMenuBar::item,
-QMessageBox,
-QProgressBar, QProgressBar::chunk,
-QPushButton, QPushButton::menu-indicator,
-QRadioButton, QRadioButton::indicator
-QScrollBar, QScrollBar::handle, QScrollBar::add-line, QScrollBar::sub-line, QScrollBar::add-page, QScrollBar::sub-page, QScrollBar::left-arrow, QScrollBar::right-arrow, QScrollBar::up-arrow, QScrollBar::down-arrow,
-QSizeGrip,
-QSlider, QSlider::handle,
-QSpinBox, QSpinBox::up-button, QSpinBox::down-button, QSpinBox::up-arrow, QSpinBox::down-arrow,
-QSplitter, QSplitter::handle,
-QStatusBar, QStatusBar::item,
-QTabBar, QTabBar::tab, QTabBar::close-button, QTabBar::tear, QTabBar::scroller,
-QTabWidget, QTabWidget::pane, QTabWidget::left-corner, QTabWidget::right-corner, QTabWidget::tab-bar,
-QTableView,
-QTableWidget,
-QTextEdit,
-QTimeEdit, QTimeEdit::up-button, QTimeEdit::down-button, QTimeEdit::up-arrow, QTimeEdit::down-arrow,
-QToolBar, QToolBar::separator, QToolBar::handle,
-QToolButton, QToolButton::menu-indicator, QToolButton::menu-button, QToolButton::menu-arrow, QToolButton::up-arrow, QToolButton::down-arrow, QToolButton::left-arrow, QToolButton::right-arrow,
-QToolBox, QToolBox::tab,
-QToolTip,
-QTreeView, QTreeView::branch, QTreeView::item
-{
-	background-color: transparent;
-	border-color: transparent;
-	border-style: solid;
-	margin: 0px;
-	padding: 0px;
-	font-family: $font-default-face;
-	font-size: $font-default-size;
+* {
+    font-family: $theme-font;
+    font-size: $theme-font-size;
 }
-//*/

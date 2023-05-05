@@ -1,27 +1,87 @@
-/* Ocean Blue
- * by Michael Fabian 'Xaymar' Dirks <info@xaymar.com>
- * https://xaymar.com/
-**/
-
-// TODO
-// - Hotkeys
-// - Scene/Source list
-// - Some sort of view inside stats?
-// - statusbar
-
-/* Element Layers
- * 1. Absolute Background: QWindow, QDockWidget
- * 2. Passive Window Elements: QMenu, QStatusBar
- * 3. Grouping: QGroupBox, QListWidget, QTabWidget
- * 4. Controls: QLabel, QPushButton, QCheckBox, QRadioButton, ...
-**/
+// Ocean Blue 
+// https://www.xaymar.com/projects/obs/ocean-blue/
+//
+// Copyright 2020-2023 Michael Fabian 'Xaymar' Dirks <info@xaymar.com>
+// 
+// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+// 
+// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+// 
+// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+// 
+// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // Mixins
 @use "sass:math";
 @use "sass:color";
-@use "util.scss";
+@import "util.scss";
 
-// Settings
+// This Theme works on a simple layering system:
+//   1. Background: Windows, Dock Widgets, ...
+//   2. Passive Elements: Menu, Status Bar, ...
+//   3. Visual Grouping Elements: Group Boxes, List Widgets, Tab Widgets, ...
+//   4. Active Elements: Controls, Labels, Push Buttons, ...
+//
+// Size Guidelines:
+// - 30px: Title Bar, Menu Bar, ...
+// - 22px: Active Elements
+// - 20px: Status Bar, ...
+
+// Theme Controls
+//----------------
+// This controls how the theme looks to the point that you can turn blue into orange.
+// Change at your own risk.
+$theme-color-bg: hsl(205, 100%, 50%);
+$theme-color-fg: rgb(255, 255, 255);
+$theme-size-titlebar: 30px;
+$theme-size-menubar: 30px;
+$theme-size-statusbar: 20px;
+$theme-size-controls: 22px;
+$theme-curve-radius: 2px;
+$theme-font: "Roboto", "Open Sans", "Segoe UI", "Malgun Gothic", sans-serif;
+$theme-font-size: 13px, 12px, 12px, 12px, 13px;
+
+// Components
+@import "qt/defaults.scss";
+@import "qt/window.scss"; // Window Containers
+
+// Menu and Status
+//@import "qt/QMenuBar.scss";
+//@import "qt/QStatusBar.scss";
+
+
+// Containers
+//@import "qt/QWidget.scss";
+//@import "qt/QGroupBox.scss";
+//@import "qt/QTabWidget.scss";
+//@import "qt/QListWidget.scss";
+// Passive Controls
+//@import "qt/QMenu.scss";
+//@import "qt/QScrollBar.scss";
+//@import "qt/QSplitter.scss";
+// Active Controls
+//@import "qt/QCheckBox.scss";
+//@import "qt/QComboBox.scss";
+//@import "qt/QLineEdit.scss";
+//@import "qt/QPushButton.scss";
+//@import "qt/QRadioButton.scss";
+//@import "qt/QSlider.scss";
+//@import "qt/QSpinBox.scss";
+
+// OBS
+//@import "obs/obstheme.scss";
+//@import "obs/obsextra.scss";
+//@import "obs/obsdocks.scss";
+//@import "obs/OBSBasicAdvAudio.scss";
+//@import "obs/OBSBasicSettings.scss";
+//@import "obs/OBSHotKeyEdit.scss";
+//@import "obs/OBSQtDisplay.scss";
+//@import "obs/OBSPropertiesView.scss";
+
+
+/*// Settings
 $control-border: 1px;
 $control-padding: 1px;
 $control-size: 22px;
@@ -98,36 +158,4 @@ $image-settings-audio: url(./OceanBlue/settings_audio.svg);
 $image-settings-hotkeys: url(./OceanBlue/settings_hotkeys.svg);
 $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 
-// Qt
-@import "qt/defaults.scss";
-// Containers
-@import "qt/QWidget.scss";
-@import "qt/QWindow.scss";
-@import "qt/QDockWidget.scss";
-@import "qt/QGroupBox.scss";
-@import "qt/QTabWidget.scss";
-@import "qt/QListWidget.scss";
-// Passive Controls
-@import "qt/QMenu.scss";
-@import "qt/QMenuBar.scss";
-@import "qt/QScrollBar.scss";
-@import "qt/QSplitter.scss";
-@import "qt/QStatusBar.scss";
-// Active Controls
-@import "qt/QCheckBox.scss";
-@import "qt/QComboBox.scss";
-@import "qt/QLineEdit.scss";
-@import "qt/QPushButton.scss";
-@import "qt/QRadioButton.scss";
-@import "qt/QSlider.scss";
-@import "qt/QSpinBox.scss";
-
-// OBS
-@import "obs/obstheme.scss";
-@import "obs/obsextra.scss";
-@import "obs/obsdocks.scss";
-@import "obs/OBSBasicAdvAudio.scss";
-@import "obs/OBSBasicSettings.scss";
-@import "obs/OBSHotKeyEdit.scss";
-@import "obs/OBSQtDisplay.scss";
-@import "obs/OBSPropertiesView.scss";
+*/
