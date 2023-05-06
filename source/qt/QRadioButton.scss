@@ -1,9 +1,17 @@
 QRadioButton {
 	margin: 0px;
 	padding: 0px;
+	min-width: $theme-size-controls;
+	min-height: $theme-size-controls;
 	border: 0px solid transparent;
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
 }
+
+QRadioButton:hover,
+QRadioButton:focus {
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+}
+
 QRadioButton:disabled {
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
 }
@@ -16,14 +24,23 @@ QRadioButton::indicator {
 	padding: $padding;
 	width: $theme-size-controls - ($margin + $padding) * 2;
 	height: $theme-size-controls - ($margin + $padding) * 2;
-	border: $border inset yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
+	border: $border inset yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
 	border-radius: math.div($theme-size-controls - ($margin + $padding + $border), 2);
 	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
 }
 
+QRadioButton::indicator:unchecked {
+	image: none;
+}
+
+QRadioButton::indicator:checked {
+	image: $image-dot;
+}
+
 QRadioButton::indicator:hover,
 QRadioButton::indicator:focus {
+	border-style: outset;
 	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-focus-lum, $theme-layer5-bg-sat * $theme-focus-sat);
 	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-focus-lum, $theme-layer5-bg-sat * $theme-focus-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-focus-lum, $theme-layer5-fg-sat * $theme-focus-sat);
@@ -39,12 +56,4 @@ QRadioButton::indicator:disabled {
 	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
 	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
-}
-
-QRadioButton::indicator:unchecked {
-	image: none;
-}
-
-QRadioButton::indicator:checked {
-	image: url('./OceanBlue/dot.svg');
 }
