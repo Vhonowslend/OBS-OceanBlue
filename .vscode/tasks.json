@@ -9,7 +9,31 @@
 			"command": "npm run build",
 			"group": {
 				"kind": "build",
+				"isDefault": false
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "Build (Debug)",
+			"type": "shell",
+			"command": "npm run debug",
+			"group": {
+				"kind": "build",
 				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "Distribute",
+			"type": "shell",
+			"command": "npm run distrib",
+			"group": {
+				"kind": "build",
+				"isDefault": false
 			},
 			"options": {
 				"cwd": "${workspaceFolder}"
