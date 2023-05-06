@@ -2,18 +2,18 @@ QStatusBar {
 	border: 0px solid transparent;
 	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
-}
 
-QStatusBar:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
-}
-
-QStatusBar::item {
-	background-color: transparent;
-	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
-}
-
-QStatusBar::item:disabled {
-	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
+	&:disabled {
+		background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
+	}
+	
+	&::item {
+		background-color: transparent;
+		color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
+	}
+	
+	&::item:disabled {
+		color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
+	}
 }

@@ -6,58 +6,54 @@ QDockWidget {
 	color: yuv709cc($theme-color-fg, $theme-layer0-fg-lum, $theme-layer0-fg-sat);
 	titlebar-close-icon: $image-btn-close;
 	titlebar-normal-icon: $image-btn-restore;
-}
 
-QDockWidget:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer0-bg-lum * $theme-disabled-lum, $theme-layer0-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer0-fg-lum * $theme-disabled-lum, $theme-layer0-fg-sat * $theme-disabled-sat);
-}
-
-QDockWidget::title {
-	margin: 0px;
-	padding: 0px;
-	min-height: $theme-size-titlebar;
-	border: 0px solid transparent;
-	border-radius: $theme-curve-radius;
-	background-color: yuv709cc($theme-color-bg, $theme-layer9-bg-lum, $theme-layer9-bg-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer9-fg-lum, $theme-layer9-fg-sat);
-	vertical-align: center;
-	text-align: center;
-}
-
-QDockWidget::title:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer9-bg-lum * $theme-disabled-lum, $theme-layer9-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer9-fg-lum * $theme-disabled-lum, $theme-layer9-fg-sat * $theme-disabled-sat);
-}
-
-QDockWidget::float-button,
-QDockWidget::close-button {
-	padding: 3px;
-	margin: 0px;
-	border: 0px solid transparent;
-	border-radius: $theme-curve-radius;
-	border-style: inset;
-	background-color: transparent;
-	color: $theme-color-fg;
-	icon-size: $theme-size-titlebar - 3px; // FIXME! Qt adds 3px padding here.
-}
-
-QDockWidget::float-button:hover,
-QDockWidget::float-button:focus,
-QDockWidget::close-button:hover,
-QDockWidget::close-button:focus {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
-}
-
-QDockWidget::float-button:pressed,
-QDockWidget::close-button:pressed {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
-}
-
-QDockWidget::float-button:disabled,
-QDockWidget::close-button:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+	&:disabled {
+		background-color: yuv709cc($theme-color-bg, $theme-layer0-bg-lum * $theme-disabled-lum, $theme-layer0-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer0-fg-lum * $theme-disabled-lum, $theme-layer0-fg-sat * $theme-disabled-sat);
+	}
+	
+	&::title {
+		margin: 0px;
+		padding: 0px;
+		min-height: $theme-size-titlebar;
+		border: 0px solid transparent;
+		border-radius: $theme-curve-radius;
+		background-color: yuv709cc($theme-color-bg, $theme-layer9-bg-lum, $theme-layer9-bg-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer9-fg-lum, $theme-layer9-fg-sat);
+		vertical-align: center;
+		text-align: center;
+	
+		&:disabled {
+			background-color: yuv709cc($theme-color-bg, $theme-layer9-bg-lum * $theme-disabled-lum, $theme-layer9-bg-sat * $theme-disabled-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer9-fg-lum * $theme-disabled-lum, $theme-layer9-fg-sat * $theme-disabled-sat);
+		}
+	}
+	
+	&::float-button,
+	&::close-button {
+		padding: 3px;
+		margin: 0px;
+		border: 0px solid transparent;
+		border-radius: $theme-curve-radius;
+		border-style: inset;
+		background-color: transparent;
+		color: $theme-color-fg;
+		icon-size: $theme-size-titlebar - 3px; // FIXME! Qt adds 3px padding here no matter what.
+		
+		&:hover,
+		&:focus {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+		}
+		
+		&:pressed {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
+		}
+		
+		&:disabled {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+		}
+	}
 }

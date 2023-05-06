@@ -1,80 +1,80 @@
 QMenu {
 	margin: 1px;
-	padding: 1px;
+	padding: 0px 1px;
 	border: 1px outset yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
 	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
-}
 
-QMenu::separator {
-	height: 0px;
-	margin: math.div(($theme-size-controls - 2px), 4) 2px;
-	border: 1px inset yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat);
-	background-color: transparent;
-	color: transparent;
+	&::separator {
+		height: 0px;
+		margin: math.div(($theme-size-controls - 2px), 4) 2px;
+		border: 1px inset yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat);
+		background-color: transparent;
+		color: transparent;
+	}
+	
+	&::item {
+		min-height: $theme-size-controls;
+		margin: 0px;
+		padding: 0px;
+		border: 0px solid transparent;
+		background-color: transparent;
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+	
+		&:selected {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+		}
+		
+		&:disabled {
+			//background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+			background-color: transparent;
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+		}
+	}
+	
+	&::indicator {
+		width: $theme-size-controls - 6px;
+		height: $theme-size-controls - 6px;
+		padding: 3px;
+	
+		&:non-exclusive:unchecked,
+		&:non-exclusive:unchecked:selected {
+			image: $image-checkmark-off;
+		}
+		
+		&:non-exclusive:checked,
+		&:non-exclusive:checked:selected {
+			image: $image-checkmark-on;
+		}
+		
+		&:exclusive:unchecked,
+		&:exclusive:unchecked:selected {
+			image: $image-zero;
+		}
+		
+		&:exclusive:checked,
+		&:exclusive:checked:selected {
+			image: $image-dot;
+		}
+	}
+	
+	&::left-arrow,
+	&::right-arrow {
+		width: $theme-size-controls * 0.5;
+		height: $theme-size-controls * 0.5;
+	}
+	
+	&::left-arrow {
+		image: $image-arrow-left;
+	}
+	
+	&::right-arrow {
+		image: $image-arrow-right;
+	}
+	
+	/* TODO: Figure out what actually uses this.
+	QMenu::icon:checked {
+		background: red;
+	}*/
 }
-
-QMenu::item {
-	min-height: $theme-size-controls;
-	margin: 0px;
-	padding: 0px;
-	border: 0px solid transparent;
-	background-color: transparent;
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
-}
-
-QMenu::item:selected {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
-}
-
-QMenu::item:disabled {
-	//background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
-	background-color: transparent;
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
-}
-
-QMenu::indicator {
-	width: $theme-size-controls - 6px;
-	height: $theme-size-controls - 6px;
-	padding: 3px;
-}
-
-QMenu::indicator:non-exclusive:unchecked,
-QMenu::indicator:non-exclusive:unchecked:selected {
-	image: $image-checkmark-off;
-}
-
-QMenu::indicator:non-exclusive:checked,
-QMenu::indicator:non-exclusive:checked:selected {
-	image: $image-checkmark-on;
-}
-
-QMenu::indicator:exclusive:unchecked,
-QMenu::indicator:exclusive:unchecked:selected {
-	image: $image-zero;
-}
-
-QMenu::indicator:exclusive:checked,
-QMenu::indicator:exclusive:checked:selected {
-	image: $image-dot;
-}
-
-QMenu::left-arrow,
-QMenu::right-arrow {
-	width: $theme-size-controls * 0.5;
-	height: $theme-size-controls * 0.5;
-}
-
-QMenu::left-arrow {
-	image: $image-arrow-left;
-}
-
-QMenu::right-arrow {
-	image: $image-arrow-right;
-}
-
-/* TODO: Figure out what actually uses this.
-QMenu::icon:checked {
-	background: red;
-}*/

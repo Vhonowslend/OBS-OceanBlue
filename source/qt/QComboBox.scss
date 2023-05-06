@@ -14,66 +14,68 @@ QComboBox {
 
 	selection-background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
 	selection-color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
-}
-
-QComboBox:hover,
-QComboBox:focus {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
-}
-
-QComboBox:on {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
-}
-
-QComboBox:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
-}
-
-QComboBox::drop-down {
-	$margin: 0px;
-	$padding: 2px;
-	$border: 0px;
-
-	margin: $margin;
-	padding: $padding;
-	border-width: $border;
-	border-style: solid;
-	border-color: transparent;
-
-	width: contentWidth($theme-size-controls, $margin, $padding, $border);
-	height: contentHeight($theme-size-controls, $margin, $padding, $border);
-
-	background-color: transparent;
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
-}
-QComboBox::drop-down:hover {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
-}
-QComboBox::drop-down:on {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
-}
-QComboBox::drop-down:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
-}
-
-QComboBox::down-arrow {
-	$margin: 0px;
-	$padding: 4px;
-	$border: 0px;
-	margin: $margin;
-	padding: $padding;
-	border-width: $border;
 	
-	width: contentWidth($theme-size-controls, $margin, $padding, $border);
-	height: contentHeight($theme-size-controls, $margin, $padding, $border);
-	image: $image-arrow-down;
-}
-QComboBox::down-arrow:on {
-	top: 2px;
+	&:hover,
+	&:focus {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+	}
+
+	&:on {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
+	}
+
+	&:disabled {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+	}
+
+	&::drop-down {
+		$margin: 0px;
+		$padding: 2px;
+		$border: 0px;
+
+		margin: $margin;
+		padding: $padding;
+		border-width: $border;
+		border-style: solid;
+		border-color: transparent;
+
+		width: contentWidth($theme-size-controls, $margin, $padding, $border);
+		height: contentHeight($theme-size-controls, $margin, $padding, $border);
+
+		background-color: transparent;
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+			
+		&:hover {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+		}
+		&:on {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
+		}
+		&:disabled {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+		}
+	}
+
+	&::down-arrow {
+		$margin: 0px;
+		$padding: 4px;
+		$border: 0px;
+		margin: $margin;
+		padding: $padding;
+		border-width: $border;
+		
+		width: contentWidth($theme-size-controls, $margin, $padding, $border);
+		height: contentHeight($theme-size-controls, $margin, $padding, $border);
+		image: $image-arrow-down;
+		
+		&:on {
+			top: 2px;
+		}
+	}
 }

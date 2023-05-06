@@ -1,43 +1,57 @@
 QPushButton {
-	margin: 0px;
-	padding: 2px 5px;
-	min-height: $theme-size-controls - 4px;
-	min-width: $theme-size-controls - 10px;
-	border: 0px solid transparent;
+	$margin: 0px;
+	$padding: 2px 5px;
+	$border: 0px;
+	margin: $margin;
+	padding: $padding;
+	border-width: $border;
+	border-style: none;
 	border-radius: $theme-curve-radius;
+	min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
+	min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
+	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
 	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
-}
 
-QPushButton:checked {
-	image: $image-checkmark-on;
-	image-position: right center;
-}
+	&:checked {
+		image: $image-checkmark-on;
+		image-position: right center;
+	}
 
-QPushButton:flat {
-	border-width: 1px solid yuv709cc($theme-color-bg, $theme-layer9-bg-lum, $theme-layer5-bg-sat);
-	background-color: transparent;
-	border-color: transparent;
-}
+	&:flat {
+		$border: 0px;
+		border-width: $border;
+		border-style: solid;
+		min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
+		min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
+		background-color: transparent;
+		border-color: transparent;
+	}
 
-QPushButton:hover,
-QPushButton:focus {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
-}
+	&:hover, &:focus {
+		border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+	}
 
-QPushButton:pressed {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
-}
+	&:pressed {
+		border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
+	}
 
-QPushButton:disabled {
-	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
-}
+	&:flat:pressed {
 
-QPushButton:flat:disabled {
-	background-color: transparent;
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+	}
+
+	&:disabled {
+		border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+	}
+
+	&:flat:disabled {
+		background-color: transparent;
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+	}
 }

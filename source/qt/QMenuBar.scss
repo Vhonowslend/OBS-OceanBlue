@@ -7,35 +7,35 @@ QMenuBar {
 	border: 0px solid transparent;
 	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
-}
-
-QMenuBar:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
-}
-
-QMenuBar::item {
-	margin: 0px;
-	padding: 0px 5px;
-	line-height: $theme-size-menubar;
-	min-height: $theme-size-menubar;
-	border: 0px solid transparent;
-	border-radius: $theme-curve-radius;
-	background-color: transparent;
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
-}
-
-QMenuBar::item:selected {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
-}
-
-QMenuBar::item:pressed {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-active-lum, $theme-layer5-bg-sat * $theme-active-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-active-lum, $theme-layer5-fg-sat * $theme-active-sat);
-}
-
-QMenuBar::item:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
+	
+	&:disabled {
+		background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
+	}
+	
+	&::item {
+		margin: 0px;
+		padding: 0px 5px;
+		line-height: $theme-size-menubar;
+		min-height: $theme-size-menubar;
+		border: 0px solid transparent;
+		border-radius: $theme-curve-radius;
+		background-color: transparent;
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+		
+		&:selected {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+		}
+		
+		&:pressed {
+			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-active-lum, $theme-layer5-bg-sat * $theme-active-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-active-lum, $theme-layer5-fg-sat * $theme-active-sat);
+		}
+		
+		&:disabled {
+			background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
+		}
+	}
 }
