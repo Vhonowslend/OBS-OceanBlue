@@ -51,3 +51,47 @@
 	$yuv: list.nth($yuv, 1) * $brightness, list.nth($yuv, 2) * $saturation, list.nth($yuv, 3) * $saturation, list.nth($yuv, 4);
 	@return fromYUV709($yuv);
 }
+
+// Get content width
+@function contentWidth($size, $margin, $padding, $border) {
+	@if list.length($margin) >= 4 {
+		$size: $size - list.nth($margin, 2) - list.nth($margin, 4);
+	} @else if list.length($margin) >= 2 {
+		$size: $size - list.nth($margin, 2) - list.nth($margin, 2);
+	} @else if list.length($margin) >= 1 {
+		$size: $size - list.nth($margin, 1) - list.nth($margin, 1);
+	}
+	@if list.length($padding) >= 4 {
+		$size: $size - list.nth($padding, 2) - list.nth($padding, 4);
+	} @else if list.length($padding) >= 2 {
+		$size: $size - list.nth($padding, 2) - list.nth($padding, 2);
+	} @else if list.length($padding) >= 1 {
+		$size: $size - list.nth($padding, 1) - list.nth($padding, 1);
+	}
+	@if list.length($border) >= 4 {
+		$size: $size - list.nth($border, 2) - list.nth($border, 4);
+	} @else if list.length($border) >= 2 {
+		$size: $size - list.nth($border, 2) - list.nth($border, 2);
+	} @else if list.length($border) >= 1 {
+		$size: $size - list.nth($border, 1) - list.nth($border, 1);
+	}
+	@return $size;
+}
+@function contentHeight($size, $margin, $padding, $border) {
+	@if list.length($margin) >= 3 {
+		$size: $size - list.nth($margin, 1) - list.nth($margin, 3);
+	} @else if list.length($margin) >= 1 {
+		$size: $size - list.nth($margin, 1) - list.nth($margin, 1);
+	}
+	@if list.length($padding) >= 3 {
+		$size: $size - list.nth($padding, 1) - list.nth($padding, 3);
+	} @else if list.length($padding) >= 1 {
+		$size: $size - list.nth($padding, 1) - list.nth($padding, 1);
+	}
+	@if list.length($border) >= 3 {
+		$size: $size - list.nth($border, 1) - list.nth($border, 3);
+	} @else if list.length($border) >= 1 {
+		$size: $size - list.nth($border, 1) - list.nth($border, 1);
+	}
+	@return $size;
+}

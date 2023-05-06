@@ -78,8 +78,8 @@ $theme-focus-lum: 1.25;
 $theme-focus-sat: 1;
 $theme-active-lum: 1.125;
 $theme-active-sat: .8;
-$theme-pressed-lum: .5;
-$theme-pressed-sat: 1.5;
+$theme-pressed-lum: 1;
+$theme-pressed-sat: 1;
 
 // Images
 $image-zero: url(./OceanBlue/zero.svg);
@@ -199,6 +199,7 @@ OBSTheme::inactive {
 @import "qt/QPushButton.scss";
 @import "qt/QRadioButton.scss";
 @import "qt/QCheckBox.scss";
+@import "qt/QComboBox.scss";
 
 // Containers
 //@import "qt/QWidget.scss";
