@@ -3,7 +3,7 @@
 @use "sass:math";
 
 @function asRGB($anycolor) {
-	@return "rgb(" + color.red($anycolor)+ ", " + color.green($anycolor) + ", " + color.blue($anycolor) + ")";
+	@return rgb(color.red($anycolor), color.green($anycolor), color.blue($anycolor));
 };
 
 @function yuv709($y, $u, $v) {
