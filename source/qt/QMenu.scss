@@ -1,14 +1,9 @@
 QMenu {
 	margin: 1px;
 	padding: 1px;
-	border: 1px outset yuv709cc($theme-color-bg, $theme-layer1-bg-lum * .5, $theme-layer1-bg-sat);
+	border: 1px outset yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
 	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
 	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
-}
-
-QMenu:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
 }
 
 QMenu::separator {
@@ -29,12 +24,13 @@ QMenu::item {
 }
 
 QMenu::item:selected {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer1-bg-sat * $theme-hover-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);	
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
 }
 
 QMenu::item:disabled {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+	//background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+	background-color: transparent;
 	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
 }
 
@@ -56,12 +52,12 @@ QMenu::indicator:non-exclusive:checked:selected {
 
 QMenu::indicator:exclusive:unchecked,
 QMenu::indicator:exclusive:unchecked:selected {
-	image: $image-checkmark-off;
+	image: $image-zero;
 }
 
 QMenu::indicator:exclusive:checked,
 QMenu::indicator:exclusive:checked:selected {
-	image: $image-checkmark-on;
+	image: $image-dot;
 }
 
 QMenu::left-arrow,

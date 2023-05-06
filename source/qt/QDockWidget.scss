@@ -52,8 +52,8 @@ QDockWidget::close-button:focus {
 
 QDockWidget::float-button:pressed,
 QDockWidget::close-button:pressed {
-	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-active-lum, $theme-layer5-bg-sat * $theme-active-sat);
-	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-active-lum, $theme-layer5-fg-sat * $theme-active-sat);
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
 }
 
 QDockWidget::float-button:disabled,

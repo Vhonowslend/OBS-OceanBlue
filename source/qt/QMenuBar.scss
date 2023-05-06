@@ -1,5 +1,8 @@
 QMenuBar {
 	spacing: 2px;
+	margin: 0px;
+	padding: 0px;
+	line-height: $theme-size-menubar;
 	min-height: $theme-size-menubar;
 	border: 0px solid transparent;
 	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
@@ -12,8 +15,10 @@ QMenuBar:disabled {
 }
 
 QMenuBar::item {
+	margin: 0px;
+	padding: 0px 5px;
+	line-height: $theme-size-menubar;
 	min-height: $theme-size-menubar;
-	padding: 2px 5px;
 	border: 0px solid transparent;
 	border-radius: $theme-curve-radius;
 	background-color: transparent;

@@ -20,29 +20,29 @@
 @import "util.scss";
 
 //--------------------------------------------------------------------------------//
-// Theme Controls
+// CONFIGURATION STARTS HERE
 //--------------------------------------------------------------------------------//
-// This controls how the theme looks to the point that you can turn blue into orange.
-// Change at your own risk.
+// Background color at medium brightness.
 $theme-color-bg: hsl(205, 100%, 50%);
-$theme-color-fg: rgb(229, 229, 229);
-$theme-color-link: hsl(205, 100%, 70%);
+// Foreground color at medium brightness.
+$theme-color-fg: rgb(225, 240, 255);
+// Size of a title bar (only used for QDockWidget)
 $theme-size-titlebar: 25px;
-$theme-size-menubar: 20px;
-$theme-size-statusbar: 20px;
+// Size of a menu bar.
+$theme-size-menubar: 22px;
+// Size of a status bar.
+$theme-size-statusbar: 22px;
+// Size of controls.
 $theme-size-controls: 22px;
+// Curve of elements.
 $theme-curve-radius: 1px;
-$theme-font: "Roboto", "Open Sans", "Segoe UI", "Malgun Gothic", sans-serif;
-$theme-font-size: 13px, 12px, 12px, 12px, 13px;
+// Font and font sizes.
+$theme-font: "Roboto", "Segoe UI", "Malgun Gothic", sans-serif;
+$theme-font-size: 13px;
 
 //--------------------------------------------------------------------------------//
 // DO NOT MODIFY BEYOND THIS POINT. CONFIGURATION ENDS HERE!
 //--------------------------------------------------------------------------------//
-
-// Size Guidelines:
-// - 30px: Title Bar, Menu Bar, ...
-// - 22px: Active Elements
-// - 20px: Status Bar, ...
 
 // QWindow, QDockWidget
 $theme-layer0-bg-lum: .1;
@@ -59,7 +59,7 @@ $theme-layer2-bg-lum: .33;
 $theme-layer2-bg-sat: 1.1;
 $theme-layer2-fg-lum: 1;
 $theme-layer2-fg-sat: 1;
-// QPushButton
+// QPushButton, QMenu::item
 $theme-layer5-bg-lum: .9;
 $theme-layer5-bg-sat: 1;
 $theme-layer5-fg-lum: 1.5;
@@ -78,6 +78,8 @@ $theme-focus-lum: 1.25;
 $theme-focus-sat: 1;
 $theme-active-lum: 1.125;
 $theme-active-sat: .8;
+$theme-pressed-lum: .5;
+$theme-pressed-sat: 1.5;
 
 // Images
 $image-zero: url(./OceanBlue/zero.svg);
@@ -193,8 +195,9 @@ OBSTheme::inactive {
 //- Info/Control Bars
 @import "qt/QStatusBar.scss";
 @import "qt/QMenuBar.scss";
-
-
+//- Active Controls
+@import "qt/QPushButton.scss";
+@import "qt/QRadioButton.scss";
 
 // Containers
 //@import "qt/QWidget.scss";
