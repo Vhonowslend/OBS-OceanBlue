@@ -1,0 +1,65 @@
+QCheckBox {
+	margin: 0px;
+	padding: 0px;
+	min-width: $theme-size-controls;
+	min-height: $theme-size-controls;
+	border: 0px solid transparent;
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+}
+
+QCheckBox:hover,
+QCheckBox:focus {
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+}
+
+QCheckBox:disabled {
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+}
+
+QCheckBox::indicator {
+	$margin: 3px;
+	$padding: 2px;
+	$border: 1px;
+	margin: $margin;
+	padding: $padding;
+	width: $theme-size-controls - ($margin + $padding) * 2;
+	height: $theme-size-controls - ($margin + $padding) * 2;
+	border: $border inset yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+	border-radius: $theme-curve-radius;
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+}
+
+QCheckBox::indicator:indeterminate {
+	image: $image-checkmark-unknown;
+}
+
+QCheckBox::indicator:unchecked {
+	image: $image-checkmark-off;
+}
+
+QCheckBox::indicator:checked  {
+	image: $image-checkmark-on;
+}
+
+QCheckBox::indicator:hover,
+QCheckBox::indicator:focus {
+	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+	border-style: outset;
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+}
+
+QCheckBox::indicator:pressed {
+	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+	border-style: inset;
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-sat, $theme-layer5-fg-sat * $theme-pressed-sat);
+}
+
+QCheckBox::indicator:disabled {
+	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+	border-style: solid;
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-sat, $theme-layer5-fg-sat * $theme-disabled-sat);
+}
