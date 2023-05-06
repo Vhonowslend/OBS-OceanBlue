@@ -1,57 +1,36 @@
-$menubar-bg: hsl($primary-hue, $primary-sat, math.div(100%, 8));
-$menubar-bg-focus: hsl($primary-hue, $primary-sat, 50%);
-$menubar-bg-active: hsl($primary-hue, $primary-sat, math.div(100%, 3));
-$menubar-bg-disabled: hsl($primary-hue, 0%, math.div(100%, 6));
-$menubar-fg: $fg;
-$menubar-fg-focus: $fg-highlight;
-$menubar-fg-active: $fg;
-$menubar-fg-disabled: hsl($tertiary-hue, $tertiary-sat, (math.div(100%, 3) * 2));
-
 QMenuBar {
-	background: $menubar-bg;
-	color: $menubar-fg;
-	spacing: 5px;
-
-	// FIXME: This makes everything disappear :-(
-	//min-height: $control-size;
-	//max-height: $control-size;
+	spacing: 2px;
+	min-height: $theme-size-menubar;
+	border: 0px solid transparent;
+	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
 }
 
 QMenuBar:disabled {
-	background: $menubar-bg-disabled;
-	color: $menubar-fg-disabled;
+	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
 }
 
 QMenuBar::item {
-	$border: 1px;
-	$padding: 0px;
-	$size: $control-size - (($border + $padding) * 2);
-
-	height: $size;
-	min-height: $size;
-	max-height: $size;
-	padding: $padding 10px;
-
-	background: $menubar-bg;
-	border: $border solid $menubar-bg;
-	color: $menubar-fg;
+	min-height: $theme-size-menubar;
+	padding: 2px 5px;
+	border: 0px solid transparent;
+	border-radius: $theme-curve-radius;
+	background-color: transparent;
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
 }
 
 QMenuBar::item:selected {
-	background: $menubar-bg-focus;
-	border-color: $menubar-bg-focus;
-	color: $menubar-fg-focus;
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
 }
 
 QMenuBar::item:pressed {
-	background: $menubar-bg-active;
-	border-color: $menubar-bg-active;
-	border-style: inset;
-	color: $menubar-fg-active;
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-active-lum, $theme-layer5-bg-sat * $theme-active-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-active-lum, $theme-layer5-fg-sat * $theme-active-sat);
 }
 
 QMenuBar::item:disabled {
-	background: $menubar-bg-disabled;
-	border-color: $menubar-bg-disabled;
-	color: $menubar-fg-disabled;
+	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
 }

@@ -1,60 +1,47 @@
-$menu-bg: hsl($primary-hue, $primary-sat, math.div(100%, 6));
-$menu-fg: $fg;
-$menu-item-bg: transparent;
-$menu-item-bd: transparent;
-$menu-item-fg: $control-fg;
-$menu-item-bg-focus: hsl($primary-hue, $primary-sat, 50%);
-$menu-item-fg-focus: $control-fg-focus;
-$menu-item-bg-disabled: hsl($primary-hue, 50%, math.div(100%, 6));
-$menu-item-fg-disabled: hsl($tertiary-hue, $tertiary-sat, math.div(100%, 3) * 2);
-
 QMenu {
-	background: $menu-bg;
-	border: 1px solid $menu-bg;
-	padding: 0px;
-	margin: 0px;
+	margin: 1px;
+	padding: 1px;
+	border: 1px outset yuv709cc($theme-color-bg, $theme-layer1-bg-lum * .5, $theme-layer1-bg-sat);
+	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum, $theme-layer1-bg-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum, $theme-layer1-fg-sat);
 }
 
-QMenu::item {
-	height: $control-size;
-	padding: 0px 5px;
-	padding-left: $control-size;
-	margin: 0px;
-	border: 0px solid transparent;
-	background: $menu-bg;
-	color: $menu-fg;
-}
-
-QMenu::item:selected {
-	background: $menu-item-bg-focus;
-	color: $menu-item-fg-focus;
-}
-
-QMenu::item:disabled {
-	background: $menu-item-bg-disabled;
-	color: $menu-item-fg-disabled;
+QMenu:disabled {
+	background-color: yuv709cc($theme-color-bg, $theme-layer1-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer1-fg-lum * $theme-disabled-lum, $theme-layer1-fg-sat * $theme-disabled-sat);
 }
 
 QMenu::separator {
 	height: 0px;
-	margin: 4px 0px;
-	border: 1px inset rgba(0, 0, 0, 20%);
+	margin: math.div(($theme-size-controls - 2px), 4) 2px;
+	border: 1px inset yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat);
+	background-color: transparent;
+	color: transparent;
+}
+
+QMenu::item {
+	min-height: $theme-size-controls;
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;
+	background-color: transparent;
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+}
+
+QMenu::item:selected {
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer1-bg-sat * $theme-hover-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);	
+}
+
+QMenu::item:disabled {
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer1-bg-sat * $theme-disabled-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
 }
 
 QMenu::indicator {
-	$margin: 2px;
-	$size: $control-size - ($margin) * 2;
-
-	// Do not enable these, they completely break layouting.
-	//min-width: $size;
-	//min-height: $size;
-	//max-width: $size;
-	//max-height: $size;
-	width: $size;
-	height: $size;
-	margin: $margin;
-	margin-right: -$control-size;
-	padding: 0px;
+	width: $theme-size-controls - 6px;
+	height: $theme-size-controls - 6px;
+	padding: 3px;
 }
 
 QMenu::indicator:non-exclusive:unchecked,
@@ -79,8 +66,8 @@ QMenu::indicator:exclusive:checked:selected {
 
 QMenu::left-arrow,
 QMenu::right-arrow {
-	width: $control-size * 0.5;
-	height: $control-size * 0.5;
+	width: $theme-size-controls * 0.5;
+	height: $theme-size-controls * 0.5;
 }
 
 QMenu::left-arrow {
@@ -91,7 +78,7 @@ QMenu::right-arrow {
 	image: $image-arrow-right;
 }
 
-// TODO: Figure out what actually uses this.
+/* TODO: Figure out what actually uses this.
 QMenu::icon:checked {
 	background: red;
-}
+}*/

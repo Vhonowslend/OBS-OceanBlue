@@ -16,110 +16,68 @@
 // Mixins
 @use "sass:math";
 @use "sass:color";
+@use "sass:string";
 @import "util.scss";
 
-// This Theme works on a simple layering system:
-//   1. Background: Windows, Dock Widgets, ...
-//   2. Passive Elements: Menu, Status Bar, ...
-//   3. Visual Grouping Elements: Group Boxes, List Widgets, Tab Widgets, ...
-//   4. Active Elements: Controls, Labels, Push Buttons, ...
-//
+//--------------------------------------------------------------------------------//
+// Theme Controls
+//--------------------------------------------------------------------------------//
+// This controls how the theme looks to the point that you can turn blue into orange.
+// Change at your own risk.
+$theme-color-bg: hsl(205, 100%, 50%);
+$theme-color-fg: rgb(229, 229, 229);
+$theme-color-link: hsl(205, 100%, 70%);
+$theme-size-titlebar: 25px;
+$theme-size-menubar: 20px;
+$theme-size-statusbar: 20px;
+$theme-size-controls: 22px;
+$theme-curve-radius: 1px;
+$theme-font: "Roboto", "Open Sans", "Segoe UI", "Malgun Gothic", sans-serif;
+$theme-font-size: 13px, 12px, 12px, 12px, 13px;
+
+//--------------------------------------------------------------------------------//
+// DO NOT MODIFY BEYOND THIS POINT. CONFIGURATION ENDS HERE!
+//--------------------------------------------------------------------------------//
+
 // Size Guidelines:
 // - 30px: Title Bar, Menu Bar, ...
 // - 22px: Active Elements
 // - 20px: Status Bar, ...
 
-// Theme Controls
-//----------------
-// This controls how the theme looks to the point that you can turn blue into orange.
-// Change at your own risk.
-$theme-color-bg: hsl(205, 100%, 50%);
-$theme-color-fg: rgb(255, 255, 255);
-$theme-size-titlebar: 30px;
-$theme-size-menubar: 30px;
-$theme-size-statusbar: 20px;
-$theme-size-controls: 22px;
-$theme-curve-radius: 2px;
-$theme-font: "Roboto", "Open Sans", "Segoe UI", "Malgun Gothic", sans-serif;
-$theme-font-size: 13px, 12px, 12px, 12px, 13px;
+// QWindow, QDockWidget
+$theme-layer0-bg-lum: .1;
+$theme-layer0-bg-sat: 1;
+$theme-layer0-fg-lum: 1;
+$theme-layer0-fg-sat: 1;
+// QStatusBar, QMenuBar
+$theme-layer1-bg-lum: .25;
+$theme-layer1-bg-sat: 1.1;
+$theme-layer1-fg-lum: 1;
+$theme-layer1-fg-sat: 1;
+// QGroupBox, QTabWidget
+$theme-layer2-bg-lum: .33;
+$theme-layer2-bg-sat: 1.1;
+$theme-layer2-fg-lum: 1;
+$theme-layer2-fg-sat: 1;
+// QPushButton
+$theme-layer5-bg-lum: .9;
+$theme-layer5-bg-sat: 1;
+$theme-layer5-fg-lum: 1.5;
+$theme-layer5-fg-sat: 1;
+// QDockWidget::title
+$theme-layer9-bg-lum: 1;
+$theme-layer9-bg-sat: .8;
+$theme-layer9-fg-lum: 0;
+$theme-layer9-fg-sat: 0;
 
-// Components
-@import "qt/defaults.scss";
-@import "qt/window.scss"; // Window Containers
-
-// Menu and Status
-//@import "qt/QMenuBar.scss";
-//@import "qt/QStatusBar.scss";
-
-
-// Containers
-//@import "qt/QWidget.scss";
-//@import "qt/QGroupBox.scss";
-//@import "qt/QTabWidget.scss";
-//@import "qt/QListWidget.scss";
-// Passive Controls
-//@import "qt/QMenu.scss";
-//@import "qt/QScrollBar.scss";
-//@import "qt/QSplitter.scss";
-// Active Controls
-//@import "qt/QCheckBox.scss";
-//@import "qt/QComboBox.scss";
-//@import "qt/QLineEdit.scss";
-//@import "qt/QPushButton.scss";
-//@import "qt/QRadioButton.scss";
-//@import "qt/QSlider.scss";
-//@import "qt/QSpinBox.scss";
-
-// OBS
-//@import "obs/obstheme.scss";
-//@import "obs/obsextra.scss";
-//@import "obs/obsdocks.scss";
-//@import "obs/OBSBasicAdvAudio.scss";
-//@import "obs/OBSBasicSettings.scss";
-//@import "obs/OBSHotKeyEdit.scss";
-//@import "obs/OBSQtDisplay.scss";
-//@import "obs/OBSPropertiesView.scss";
-
-
-/*// Settings
-$control-border: 1px;
-$control-padding: 1px;
-$control-size: 22px;
-$control-inner-size: $control-size - ((($control-border + $control-padding)) * 2);
-$scrollbar-size: 15px;
-$text-padding: 5px;
-$font-default-face: "Open Sans", "Roboto", "Malgun Gothic", sans-serif;
-$font-default-size: 12px;
-
-// Palette
-$primary-hue: 210;
-$primary-sat: 100%;
-$secondary-hue: 210;
-$secondary-sat: 100%;
-$tertiary-hue: 0;
-$tertiary-sat: 0%;
-$fg: hsl($tertiary-hue, $tertiary-sat, 95%);
-$fg-light: hsl($tertiary-hue, $tertiary-sat, 98%);
-$fg-highlight: hsl($tertiary-hue, $tertiary-sat, 100%);
-
-$window-bg: hsl($primary-hue, $primary-sat, 5%);
-$window-bg-disabled: hsl($primary-hue, math.div($primary-sat, 2), 10%);
-$window-fg: $fg;
-$window-fg-disabled: hsl($tertiary-hue, $tertiary-sat, ((math.div(100%, 3)) * 2));
-
-$header-bg: hsl($primary-hue, $primary-sat, 20%);
-$header-bg-focus: hsl($primary-hue, $primary-sat, 30%);
-$header-fg: $fg;
-$header-fg-focus: $fg-highlight;
-
-$control-bg: hsl($primary-hue, $primary-sat, 30%);
-$control-bg-focus: hsl($primary-hue, $primary-sat, 50%);
-$control-bg-active: hsl($primary-hue, $primary-sat, 40%);
-$control-bg-disabled: hsl($primary-hue, $primary-sat * 0.5, 20%);
-$control-fg: $fg;
-$control-fg-focus: $fg-highlight;
-$control-fg-active: $fg;
-$control-fg-disabled: hsl($tertiary-hue, $tertiary-sat, ((math.div(100%, 3)) * 2));
+$theme-disabled-lum: .5;
+$theme-disabled-sat: .75;
+$theme-hover-lum: 1.25;
+$theme-hover-sat: 1;
+$theme-focus-lum: 1.25;
+$theme-focus-sat: 1;
+$theme-active-lum: 1.125;
+$theme-active-sat: .8;
 
 // Images
 $image-zero: url(./OceanBlue/zero.svg);
@@ -158,4 +116,110 @@ $image-settings-audio: url(./OceanBlue/settings_audio.svg);
 $image-settings-hotkeys: url(./OceanBlue/settings_hotkeys.svg);
 $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 
-*/
+// Set up default fonts.
+* {
+    font-family: $theme-font;
+    font-size: $theme-font-size;
+}
+
+/*OBSTheme {
+	// - alternateBase
+	// - base
+	// - button
+	// - buttonText
+	// - brightText
+	// - dark
+	// - highlight
+	// - highlightedText
+	// - light
+	// - link
+	// - linkVisited
+	// - mid
+	// - midlight
+	// - shadow
+	// - text, foreground
+	// - toolTipBase
+	// - toolTipText
+	// - windowText, windowForeground
+	// - window, background
+	// - placeholderText
+	
+	base: asRGB(#F00);
+	alternateBase: asRGB(#0F0);
+
+	// Affects
+	// - Hotkey Buttons (disabled, enabled)
+	window: asRGB(#00F);
+
+	// Affects
+	// - QLabel
+	windowText: asRGB($theme-color-fg);
+
+	button: asRGB(#F77);
+	buttonText: asRGB($theme-color-fg);
+
+	shadow: asRGB(#FF0);
+	dark: asRGB(#F0F);
+	mid: asRGB(#0FF);
+	midlight: asRGB($theme-color-bg);
+	light: asRGB(#77F);
+	highlight: asRGB($theme-color-bg);
+    
+    // QLabel, ...
+	text: asRGB($theme-color-fg);
+	brightText: asRGB($theme-color-fg);
+	highlightText: asRGB($theme-color-fg);
+	link: asRGB($theme-color-link);
+	linkVisited: asRGB($theme-color-link);
+}
+
+OBSTheme::disabled {
+
+}
+
+OBSTheme::inactive {
+	text: asRGB(yuv709cc($theme-color-fg, .5, .5));
+	brightText: asRGB(yuv709cc($theme-color-fg, .5, .5));
+	highlightText: asRGB(yuv709cc($theme-color-fg, .5, .5));
+	link: asRGB($theme-color-link);
+	linkVisited: asRGB($theme-color-link);
+}*/
+
+// Components
+//- Window Containers
+@import "qt/QWindow.scss";
+@import "qt/QDockWidget.scss";
+@import "qt/QMenu.scss";
+//- Info/Control Bars
+@import "qt/QStatusBar.scss";
+@import "qt/QMenuBar.scss";
+
+
+
+// Containers
+//@import "qt/QWidget.scss";
+//@import "qt/QGroupBox.scss";
+//@import "qt/QTabWidget.scss";
+//@import "qt/QListWidget.scss";
+// Passive Controls
+//@import "qt/QMenu.scss";
+//@import "qt/QScrollBar.scss";
+//@import "qt/QSplitter.scss";
+// Active Controls
+//@import "qt/QCheckBox.scss";
+//@import "qt/QComboBox.scss";
+//@import "qt/QLineEdit.scss";
+//@import "qt/QPushButton.scss";
+//@import "qt/QRadioButton.scss";
+//@import "qt/QSlider.scss";
+//@import "qt/QSpinBox.scss";
+
+// OBS
+//@import "obs/obstheme.scss";
+//@import "obs/obsextra.scss";
+//@import "obs/obsdocks.scss";
+//@import "obs/OBSBasicAdvAudio.scss";
+//@import "obs/OBSBasicSettings.scss";
+//@import "obs/OBSHotKeyEdit.scss";
+//@import "obs/OBSQtDisplay.scss";
+//@import "obs/OBSPropertiesView.scss";

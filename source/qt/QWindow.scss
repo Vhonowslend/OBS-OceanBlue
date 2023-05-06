@@ -1,0 +1,11 @@
+QMainWindow,
+QDialog {
+	background-color: yuv709cc($theme-color-bg, $theme-layer0-bg-lum, $theme-layer0-bg-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer0-fg-lum, $theme-layer0-fg-sat);
+}
+
+QMainWindow:disabled,
+QDialog:disabled {
+	background-color: yuv709cc($theme-color-bg, $theme-layer0-bg-lum * $theme-disabled-lum, $theme-layer0-bg-sat * $theme-disabled-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer0-fg-lum * $theme-disabled-lum, $theme-layer0-fg-sat * $theme-disabled-sat);
+}

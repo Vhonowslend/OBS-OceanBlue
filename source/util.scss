@@ -13,6 +13,14 @@
 		($y + $u * 1.85560) * 255
 	);
 };
+@function yuv709a($y, $u, $v, $a) {
+	@return rgb(
+		($y + $v * 1.57480) * 255,
+		($y + $u * -0.18732 + $v * -0.46812) * 255,
+		($y + $u * 1.85560) * 255,
+		$a
+	);
+};
 
 // Convert from YUV709 to RGB
 @function fromYUV709($yuv) {
@@ -22,7 +30,7 @@
 	$r: $y + $v * 1.57480;
 	$g: $y + $u * -0.18732 + $v * -0.46812;
 	$b: $y + $u * 1.85560;
-	@return rgb($r * 255, $g * 255, $b * 255);
+	@return rgba($r * 255, $g * 255, $b * 255, list.nth($yuv, 4));
 }
 
 // Convert from RGB to YUV709
@@ -33,13 +41,13 @@
 	$y: ($r * 0.21260 + $g * 0.71520 + $b * 0.07220);
 	$u: ($r * -0.11457 + $g * -0.38543 + $b * 0.5);
 	$v: ($r * 0.5 + $g * -0.45415 + $b * -0.04585);
-	@return $y, $u, $v;
+	@return $y, $u, $v, color.alpha($anycolor);
 }
 
 // Modify brightness and saturation.
 @function yuv709cc($anycolor, $brightness, $saturation) {
-	$saturation: $saturation * math.sin(math.clamp($brightness * math.$pi * .5, 0, 1));
+	$saturation: $saturation * $brightness;
 	$yuv: toYUV709($anycolor);
-	$yuv: list.nth($yuv, 1) * $brightness, list.nth($yuv, 2) * $saturation, list.nth($yuv, 3) * $saturation;
+	$yuv: list.nth($yuv, 1) * $brightness, list.nth($yuv, 2) * $saturation, list.nth($yuv, 3) * $saturation, list.nth($yuv, 4);
 	@return fromYUV709($yuv);
 }

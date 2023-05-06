@@ -1,0 +1,74 @@
+$dockwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 6));
+$dockwidget-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
+$dockwidget-fg: $control-fg;
+$dockwidget-bg-disabled: hsla($primary-hue, math.div($primary-sat, 2), 50%, math.div(100%, 6));
+$dockwidget-bd-disabled: hsla($primary-hue, math.div($primary-sat, 2), 75%, math.div(100%, 3));
+$dockwidget-fg-disabled: $control-fg-disabled;
+$dockwidget-title-bg: hsl($primary-hue, $primary-sat, 45%);
+$dockwidget-title-bd: transparent;
+$dockwidget-title-fg: $control-fg-focus;
+
+QDockWidget {
+	titlebar-close-icon: $image-btn-close;
+	titlebar-normal-icon: $image-btn-restore;
+
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;
+	background-color: $dockwidget-bg;
+	border-color: $dockwidget-bd;
+	color: $dockwidget-fg;
+}
+
+QDockWidget:disabled {
+	background-color: $dockwidget-bg-disabled;
+	border-color: $dockwidget-bd-disabled;
+	color: $dockwidget-fg-disabled;
+}
+
+QDockWidget::title {
+	border: 0px solid $dockwidget-title-bg;
+	background-color: $dockwidget-title-bg;
+	color: $dockwidget-title-fg;
+	padding: 2px;
+	vertical-align: center;
+	text-align: center;
+}
+
+//QDockWidget::title:hover,
+//QDockWidget::title:focus {
+//	border-color: $dockwidget-title-bg-focus;
+//	background-color: $dockwidget-title-bg-focus;
+//	color: $dockwidget-title-fg-focus;
+//}
+
+QDockWidget::float-button,
+QDockWidget::close-button {
+	background-color: transparent;
+	color: $control-fg;
+	icon-size: 50px;
+}
+
+QDockWidget::float-button:hover,
+QDockWidget::float-button:focus,
+QDockWidget::close-button:hover,
+QDockWidget::close-button:focus {
+	border-color: $control-bg-focus;
+	background-color: $control-bg;
+	color: $control-fg-focus;
+}
+
+QDockWidget::float-button:pressed,
+QDockWidget::close-button:pressed {
+	border-color: $control-bg-active;
+	background-color: $control-bg-active;
+	color: $control-fg-active;
+}
+
+QDockWidget::float-button:disabled,
+QDockWidget::close-button:disabled {
+	border-color: $control-bg-disabled;
+	background-color: $control-bg-disabled;
+	color: $control-fg-disabled;
+	border-style: inset;
+}
