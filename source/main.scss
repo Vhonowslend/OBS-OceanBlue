@@ -46,12 +46,12 @@ $theme-font-size: 13px;
 
 // QWindow, QDockWidget
 $theme-layer0-bg-lum: .1;
-$theme-layer0-bg-sat: 1;
+$theme-layer0-bg-sat: 1.3;
 $theme-layer0-fg-lum: 1;
 $theme-layer0-fg-sat: 1;
 // QStatusBar, QMenuBar
 $theme-layer1-bg-lum: .25;
-$theme-layer1-bg-sat: 1.1;
+$theme-layer1-bg-sat: 1.2;
 $theme-layer1-fg-lum: 1;
 $theme-layer1-fg-sat: 1;
 // QGroupBox, QTabWidget
@@ -59,11 +59,26 @@ $theme-layer2-bg-lum: .33;
 $theme-layer2-bg-sat: 1.1;
 $theme-layer2-fg-lum: 1;
 $theme-layer2-fg-sat: 1;
+// QComboBox DropDown
+$theme-layer3-bg-lum: .5;
+$theme-layer3-bg-sat: 1;
+$theme-layer3-fg-lum: 1;
+$theme-layer3-fg-sat: 1;
+// QComboBox DropDown
+$theme-layer4-bg-lum: .67;
+$theme-layer4-bg-sat: 1;
+$theme-layer4-fg-lum: 1.5;
+$theme-layer4-fg-sat: 1;
 // QPushButton, QMenu::item
 $theme-layer5-bg-lum: .8;
 $theme-layer5-bg-sat: 1;
 $theme-layer5-fg-lum: 1.5;
 $theme-layer5-fg-sat: 1;
+// Active Sub-controls
+$theme-layer6-bg-lum: 1.05;
+$theme-layer6-bg-sat: 1;
+$theme-layer6-fg-lum: 1.5;
+$theme-layer6-fg-sat: 1;
 // QDockWidget::title
 $theme-layer9-bg-lum: 1;
 $theme-layer9-bg-sat: .8;
@@ -200,6 +215,7 @@ OBSTheme::inactive {
 @import "qt/QRadioButton.scss";
 @import "qt/QCheckBox.scss";
 @import "qt/QComboBox.scss";
+@import "qt/QSpinBox.scss";
 
 // Containers
 //@import "qt/QWidget.scss";
