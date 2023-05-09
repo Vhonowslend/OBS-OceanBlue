@@ -6,7 +6,7 @@ QTabWidget {
 	&::pane {
 		$margin: 0px;
 		$padding: 5px 5px;
-		$border: 0px;
+		$border: 1px;
 	
 		margin: $margin;
 		padding: $padding;
@@ -14,9 +14,9 @@ QTabWidget {
 		border-radius: $theme-curve-radius;
 		min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
 		min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
-		border-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat);
-		background-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat);
-		color: yuv709cc($theme-color-fg, $theme-layer2-fg-lum, $theme-layer2-fg-sat);
+		border-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.5);
+		background-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.75);
+		color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum, $theme-layer3-fg-sat);
 	}
 
 	&::tab-bar {
@@ -36,30 +36,31 @@ QTabWidget {
 
 	& > QTabBar {
 		&::tab {
-			$margin: 2px 0px 0px 0px;
+			$margin: 5px 0px 0px 0px;
 			$padding: 2px 5px;
-			$border: 1px;
+			$border: 1px 1px 0px 1px;
 		
 			margin: $margin;
 			padding: $padding;
-			border: $border solid transparent;
+			border-style: solid;
+			border-width: $border;
 			border-radius: $theme-curve-radius;
 			min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
 			min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
-			border-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum * $theme-pressed-lum, $theme-layer2-bg-sat * $theme-pressed-sat);
-			background-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum * $theme-pressed-lum, $theme-layer2-bg-sat * $theme-pressed-sat);
-			color: yuv709cc($theme-color-fg, $theme-layer2-fg-lum, $theme-layer2-fg-sat);
+			border-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.5);
+			background-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.75);
+			color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum, $theme-layer3-fg-sat);
 
 			&:focus {
-				border-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum * $theme-focus-lum, $theme-layer2-bg-sat * $theme-focus-sat);
-				background-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum * $theme-focus-lum, $theme-layer2-bg-sat * $theme-focus-sat);
-				color: yuv709cc($theme-color-fg, $theme-layer2-fg-lum * $theme-focus-lum, $theme-layer2-fg-sat * $theme-focus-sat);
+				border-color: yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-focus-lum, $theme-layer3-bg-sat * $theme-focus-sat);
+				background-color: yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-focus-lum, $theme-layer3-bg-sat * $theme-focus-sat);
+				color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum * $theme-focus-lum, $theme-layer3-fg-sat * $theme-focus-sat);
 			}
 
 			&:hover {
-				border-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum * $theme-hover-lum, $theme-layer2-bg-sat * $theme-hover-sat);
-				background-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum * $theme-hover-lum, $theme-layer2-bg-sat * $theme-hover-sat);
-				color: yuv709cc($theme-color-fg, $theme-layer2-fg-lum * $theme-hover-lum, $theme-layer2-fg-sat * $theme-hover-sat);
+				border-color: yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-hover-lum, $theme-layer3-bg-sat * $theme-hover-sat);
+				background-color: yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-hover-lum, $theme-layer3-bg-sat * $theme-hover-sat);
+				color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum * $theme-hover-lum, $theme-layer3-fg-sat * $theme-hover-sat);
 			}
 
 			&:selected {
@@ -68,12 +69,12 @@ QTabWidget {
 				min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
 				min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
 
-				border-color: yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat);
+				border-color: yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat);
 				background-color: #{"qlineargradient(x1: 0, y1: 0, x1: 0, y2: 1"},
 					#{"stop: 0.5"} yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-focus-lum, $theme-layer3-bg-sat * $theme-focus-sat),
-					#{"stop: 1 "} yuv709cc($theme-color-bg, $theme-layer2-bg-lum, $theme-layer2-bg-sat)
+					#{"stop: 1 "} color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.5)
 					#{")"};
-				color: yuv709cc($theme-color-fg, $theme-layer2-fg-lum, $theme-layer2-fg-sat);
+				color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum, $theme-layer3-fg-sat);
 			}
 
 			&:only-one {
@@ -85,48 +86,3 @@ QTabWidget {
 		}
 	}
 }
-
-/*
-$tabwidget-bg: hsla($primary-hue, $primary-sat * 0.8, 50%, math.div(100%, 6));
-$tabwidget-bd: hsla($primary-hue, $primary-sat, 75%, math.div(100%, 3));
-$tabwidget-fg: $control-fg;
-$tabwidget-bg-disabled: hsla($primary-hue, $primary-sat * 0.5, 50%, math.div(100%, 6));
-$tabwidget-bd-disabled: hsla($primary-hue, $primary-sat * 0.5, 75%, math.div(100%, 3));
-$tabwidget-fg-disabled: $control-fg-disabled;
-$tabwidget-title-bg: hsl($primary-hue, $primary-sat * 0.8, 75%);
-$tabwidget-title-bd: hsl($primary-hue, $primary-sat, 50%);
-$tabwidget-title-fg: $control-fg;
-
-QTabWidget::tab-bar {
-	padding: 0px $text-padding;
-}
-
-QTabWidget::pane {
-	background: $tabwidget-bg;
-	border: $control-border solid $tabwidget-bd;
-	border-radius: 1px;
-	margin-top: -$control-border;
-	padding: 0px;
-}
-
-QTabBar::tab {
-	padding: $control-padding $text-padding;
-	height: $control-inner-size;
-	border: $control-border solid $tabwidget-bd;
-	background: $tabwidget-bg;
-	border-top-left-radius: $control-border * 3;
-	border-top-right-radius: $control-border * 3;
-	margin-right: $control-border * 3;
-}
-
-QTabBar::tab:hover {
-	background: $control-bg-active;
-	border-color: $control-bg-active;
-}
-
-QTabBar::tab:selected {
-	background: $control-bg-focus;
-	border-color: $control-bg-focus;
-	border-bottom-color: transparent;
-}
-*/

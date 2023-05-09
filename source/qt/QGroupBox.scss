@@ -1,0 +1,85 @@
+QGroupBox {
+	$margin: 15px 5px 5px 5px;
+	$padding: 10px 5px 5px 5px;
+	$border: 1px;
+
+	margin: $margin;
+	padding: $padding;
+	border-width: $border;
+	border-style: solid;
+	border-radius: $theme-curve-radius;
+	min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
+	min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
+	border-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.5);
+	background-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.75);
+	color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum, $theme-layer3-fg-sat);
+
+	&::title {
+		$margin: 0px 0px 0px 0px;
+		$padding: 2px 5px;
+		$border: 0px;
+	
+		top: -12px;
+		left: 10px;
+		margin: $margin;
+		padding: $padding;
+		border-width: $border;
+		border-style: solid;
+		border-radius: $theme-curve-radius;
+		min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
+		min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
+		border-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.5);
+		background-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat), $alpha: -.25);
+		color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum, $theme-layer3-fg-sat);
+	}
+
+	&:disabled {
+		border-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-disabled-lum, $theme-layer3-bg-sat * $theme-disabled-sat), $alpha: -.5);
+		background-color: color.adjust(yuv709cc($theme-color-bg, $theme-layer3-bg-lum * $theme-disabled-lum, $theme-layer3-bg-sat * $theme-disabled-sat), $alpha: -.25);
+		color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum * $theme-disabled-lum, $theme-layer3-fg-sat * $theme-disabled-sat);
+	}
+}
+
+/*
+QGroupBox::indicator { // TODO: Actually see how this looks.
+	$border: 1px;
+	$padding: 1px;
+	$size: $control-size - ($border + $padding) * 2;
+
+	background: $control-bg;
+	border: $border solid $control-bg;
+	padding: $padding;
+
+	width: $size;
+	height: $size;
+}
+
+QGroupBox::indicator:hover,
+QGroupBox::indicator:focus {
+	background: $control-bg-focus;
+	border-color: $control-bg-focus;
+}
+
+QGroupBox::indicator:pressed {
+	background: $control-bg-active;
+	border-color: $control-bg-active;
+	border-style: inset;
+}
+
+QGroupBox::indicator:disabled {
+	background: $control-bg-disabled;
+	border-color: $control-bg-disabled;
+}
+
+QGroupBox::indicator:indeterminate {
+	image: $image-checkmark-unknown;
+}
+
+QGroupBox::indicator:unchecked {
+	image: $image-checkmark-off;
+}
+
+QGroupBox::indicator:checked  {
+	image: $image-checkmark-on;
+}
+*/

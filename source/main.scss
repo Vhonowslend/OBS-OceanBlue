@@ -212,6 +212,9 @@ OBSTheme::inactive {
 //- Info/Control Bars
 @import "qt/QStatusBar.scss";
 @import "qt/QMenuBar.scss";
+//- Grouping Controls
+@import "qt/QTabWidget.scss";
+@import "qt/QGroupBox.scss";
 //- Active Controls
 @import "qt/QPushButton.scss";
 @import "qt/QRadioButton.scss";
@@ -219,11 +222,9 @@ OBSTheme::inactive {
 @import "qt/QComboBox.scss";
 @import "qt/QSpinBox.scss";
 @import "qt/QLineEdit.scss";
-@import "qt/QTabWidget.scss";
 
 // Containers
 //@import "qt/QWidget.scss";
-//@import "qt/QGroupBox.scss";
 //@import "qt/QListWidget.scss";
 // Passive Controls
 //@import "qt/QScrollBar.scss";
