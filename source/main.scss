@@ -54,12 +54,12 @@ $theme-layer1-bg-lum: .25;
 $theme-layer1-bg-sat: 1.2;
 $theme-layer1-fg-lum: 1;
 $theme-layer1-fg-sat: 1;
-// QGroupBox, QTabWidget
+// 
 $theme-layer2-bg-lum: .33;
 $theme-layer2-bg-sat: 1.1;
 $theme-layer2-fg-lum: 1;
 $theme-layer2-fg-sat: 1;
-// QComboBox DropDown
+// QComboBox DropDown, QTabWidget
 $theme-layer3-bg-lum: .5;
 $theme-layer3-bg-sat: 1;
 $theme-layer3-fg-lum: 1;
@@ -93,8 +93,8 @@ $theme-focus-lum: 1.25;
 $theme-focus-sat: 1;
 $theme-active-lum: 1.125;
 $theme-active-sat: .8;
-$theme-pressed-lum: 1;
-$theme-pressed-sat: 1;
+$theme-pressed-lum: .75;
+$theme-pressed-sat: 1.2;
 
 // Images
 $image-zero: url(./OceanBlue/zero.svg);
@@ -137,6 +137,8 @@ $image-settings-advanced: url(./OceanBlue/settings_advanced.svg);
 * {
     font-family: $theme-font;
     font-size: $theme-font-size;
+//	background-color: transparent;
+//	border-color: transparent;
 }
 
 /*OBSTheme {
@@ -217,11 +219,11 @@ OBSTheme::inactive {
 @import "qt/QComboBox.scss";
 @import "qt/QSpinBox.scss";
 @import "qt/QLineEdit.scss";
+@import "qt/QTabWidget.scss";
 
 // Containers
 //@import "qt/QWidget.scss";
 //@import "qt/QGroupBox.scss";
-//@import "qt/QTabWidget.scss";
 //@import "qt/QListWidget.scss";
 // Passive Controls
 //@import "qt/QScrollBar.scss";

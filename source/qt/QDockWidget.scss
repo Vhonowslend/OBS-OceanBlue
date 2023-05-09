@@ -48,7 +48,7 @@ QDockWidget {
 		
 		&:pressed {
 			background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-pressed-lum, $theme-layer5-bg-sat * $theme-pressed-sat);
-			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
 		}
 		
 		&:disabled {

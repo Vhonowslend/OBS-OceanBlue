@@ -60,7 +60,7 @@ QSpinBox, QDoubleSpinBox {
 
 		&:pressed {
 			background-color: yuv709cc($theme-color-bg, $theme-layer6-bg-lum * $theme-pressed-lum, $theme-layer6-bg-sat * $theme-pressed-sat);
-			color: yuv709cc($theme-color-fg, $theme-layer6-fg-lum * $theme-pressed-lum, $theme-layer6-fg-sat * $theme-pressed-sat);
+			color: yuv709cc($theme-color-fg, $theme-layer6-fg-lum, $theme-layer6-fg-sat);
 		}
 
 		&:disabled {
