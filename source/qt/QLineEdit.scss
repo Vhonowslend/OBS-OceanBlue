@@ -1,0 +1,40 @@
+QLineEdit,
+QTextEdit,
+QPlainTextEdit {
+	$margin: 0px;
+	$padding: 2px 5px;
+	$border: 1px;
+
+	margin: $margin;
+	padding: $padding;
+	border: $border solid transparent;
+	border-radius: $theme-curve-radius;
+	min-width: contentWidth($theme-size-controls, $margin, $padding, $border);
+	min-height: contentHeight($theme-size-controls, $margin, $padding, $border);
+	border-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
+	background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
+	color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+
+	selection-background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum, $theme-layer5-bg-sat);
+	selection-color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum, $theme-layer5-fg-sat);
+
+	&:focus {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-focus-lum, $theme-layer5-bg-sat * $theme-focus-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-focus-lum, $theme-layer5-fg-sat * $theme-focus-sat);
+	}
+	
+	&:hover {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-hover-lum, $theme-layer5-bg-sat * $theme-hover-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-hover-lum, $theme-layer5-fg-sat * $theme-hover-sat);
+	}
+
+	&:read-only {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-pressed-lum, $theme-layer5-fg-sat * $theme-pressed-sat);
+	}
+
+	&:disabled {
+		background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-disabled-lum, $theme-layer5-bg-sat * $theme-disabled-sat);
+		color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-disabled-lum, $theme-layer5-fg-sat * $theme-disabled-sat);
+	}
+}

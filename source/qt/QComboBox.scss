@@ -102,7 +102,7 @@ QComboBox {
 		background-color: yuv709cc($theme-color-bg, $theme-layer3-bg-lum, $theme-layer3-bg-sat);
 		color: yuv709cc($theme-color-fg, $theme-layer3-fg-lum, $theme-layer3-fg-sat);
 
-		selection-background-color: yuv709cc($theme-color-bg, $theme-layer5-bg-lum * $theme-focus-lum, $theme-layer5-bg-sat * $theme-focus-sat);
-		selection-color: yuv709cc($theme-color-fg, $theme-layer5-fg-lum * $theme-focus-lum, $theme-layer5-fg-sat * $theme-focus-sat);
+		selection-background-color: yuv709cc($theme-color-bg, $theme-layer6-bg-lum, $theme-layer6-bg-sat);
+		selection-color: yuv709cc($theme-color-fg, $theme-layer6-fg-lum, $theme-layer6-fg-sat);
 	}
 }

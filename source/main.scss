@@ -70,12 +70,12 @@ $theme-layer4-bg-sat: 1;
 $theme-layer4-fg-lum: 1.5;
 $theme-layer4-fg-sat: 1;
 // QPushButton, QMenu::item
-$theme-layer5-bg-lum: .8;
+$theme-layer5-bg-lum: .75;
 $theme-layer5-bg-sat: 1;
 $theme-layer5-fg-lum: 1.5;
 $theme-layer5-fg-sat: 1;
 // Active Sub-controls
-$theme-layer6-bg-lum: 1.05;
+$theme-layer6-bg-lum: 1;
 $theme-layer6-bg-sat: 1;
 $theme-layer6-fg-lum: 1.5;
 $theme-layer6-fg-sat: 1;
@@ -216,6 +216,7 @@ OBSTheme::inactive {
 @import "qt/QCheckBox.scss";
 @import "qt/QComboBox.scss";
 @import "qt/QSpinBox.scss";
+@import "qt/QLineEdit.scss";
 
 // Containers
 //@import "qt/QWidget.scss";
@@ -223,17 +224,10 @@ OBSTheme::inactive {
 //@import "qt/QTabWidget.scss";
 //@import "qt/QListWidget.scss";
 // Passive Controls
-//@import "qt/QMenu.scss";
 //@import "qt/QScrollBar.scss";
 //@import "qt/QSplitter.scss";
 // Active Controls
-//@import "qt/QCheckBox.scss";
-//@import "qt/QComboBox.scss";
-//@import "qt/QLineEdit.scss";
-//@import "qt/QPushButton.scss";
-//@import "qt/QRadioButton.scss";
 //@import "qt/QSlider.scss";
-//@import "qt/QSpinBox.scss";
 
 // OBS
 //@import "obs/obstheme.scss";
